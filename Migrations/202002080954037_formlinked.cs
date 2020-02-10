@@ -1,0 +1,22 @@
+namespace SchoolPortal.Migrations
+{
+    using System;
+    using System.Data.Entity.Migrations;
+    
+    public partial class formlinked : DbMigration
+    {
+        public override void Up()
+        {
+            AddColumn("dbo.Students", "Form_Id", c => c.Int());
+            CreateIndex("dbo.Students", "Form_Id");
+            AddForeignKey("dbo.Students", "Form_Id", "dbo.Forms", "Id");
+        }
+        
+        public override void Down()
+        {
+            DropForeignKey("dbo.Students", "Form_Id", "dbo.Forms");
+            DropIndex("dbo.Students", new[] { "Form_Id" });
+            DropColumn("dbo.Students", "Form_Id");
+        }
+    }
+}

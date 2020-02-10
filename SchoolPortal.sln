@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29709.97
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SchoolPortal", "SchoolPortal.csproj", "{1021B808-75E9-4512-8BD6-BFE99205709D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SchoolPortal.Tests", "..\SchoolPortal.Tests\SchoolPortal.Tests.csproj", "{F05E2362-3C41-4454-A5CD-CE20FDA64617}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1021B808-75E9-4512-8BD6-BFE99205709D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1021B808-75E9-4512-8BD6-BFE99205709D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1021B808-75E9-4512-8BD6-BFE99205709D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1021B808-75E9-4512-8BD6-BFE99205709D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F05E2362-3C41-4454-A5CD-CE20FDA64617}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F05E2362-3C41-4454-A5CD-CE20FDA64617}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F05E2362-3C41-4454-A5CD-CE20FDA64617}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F05E2362-3C41-4454-A5CD-CE20FDA64617}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F2D78093-02B3-42F2-9F3B-520498C9E744}
+	EndGlobalSection
+EndGlobal

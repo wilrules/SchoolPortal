@@ -1,0 +1,25 @@
+﻿@model SchoolPortal.Models.Student
+
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Profile</h2>
+
+
+
+
+
+<table class="table table-bordered  table-hover">
+    <thead>
+
+    </thead>
+    <tr> <td> Full Name</td> <td>@Model.FirstName @Model.MiddleName @Model.Lastname</td> </tr>
+    <tr><td>Email address</td><td>@Model.EmailAddress</td> </tr>
+    <tr><td>Student Type</td><td>@Model.Type</td> </tr>
+    <tr><td>Gender</td><td>@Model.Gender</td> </tr>
+    <tr><td>Class</td><td>@Model.Form</td></tr>
+
+</table>

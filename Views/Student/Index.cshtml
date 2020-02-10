@@ -1,0 +1,81 @@
+﻿
+@model IEnumerable<SchoolPortal.Models.Student>
+
+
+@{
+	ViewBag.Title = "Index";
+	Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div></div>
+
+
+	<table class="table table-bordered table-hover">
+		<thead>
+			<tr>
+
+				<th>First Name</th>
+				<th>Last Name</th>
+				<th>Type</th>
+				<th>Gender</th>
+				<th>Class</th>
+
+
+			</tr>
+
+
+
+
+
+		</thead>
+
+		<tbody>
+			@foreach (var students in Model)
+			{
+			<tr>
+				<td>@Html.ActionLink(students.FirstName, "Details", "Student", new { id = students.Id }, null)</td>
+				<td>@Html.ActionLink(students.Lastname, "Details", "Student", new { id = students.Id }, null)</td>
+				<td>@students.Type</td>
+				<td>@students.Gender</td>
+				<td>@students.Form.Name</td>
+				<td>
+					<div class="btn-group">
+						<a href="#" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+							Select Action
+							<span class="caret"></span>
+						</a>
+						<ul class="dropdown-menu">
+							<li><a href="#">Dropdown link</a></li>
+							<li><a href="#">Dropdown link</a></li>
+							<li><a href="#">Dropdown link</a></li>
+						</ul>
+					</div>
+				</td>
+
+
+
+
+
+			</tr>
+			}
+
+
+
+
+
+
+		</tbody>
+
+
+
+
+
+
+	</table>
+
+
+
+
+
+
