@@ -13,8 +13,9 @@ namespace SchoolPortal.Models
 
 
         [Required]
-        [Display(Name = "First Name")]
+    
         [StringLength(12)]
+        [Display(Name = "First Name")]
         public string FirstName { get; set; }
 
 
@@ -22,7 +23,7 @@ namespace SchoolPortal.Models
         public string MiddleName { get; set; }
 
 
-        [Display(Name = "Surname")]
+        [Display(Name = "Last Name")]
         [StringLength(12)]
         [Required]
         public string Lastname { get; set; }
@@ -32,18 +33,25 @@ namespace SchoolPortal.Models
         [Display(Name = "Gender")]
         public string Gender { get; set; }
 
+        [Required]
+        [Display(Name = "Date Of Birth")]
+        [DataType(DataType.DateTime)]
+        [DisplayFormat(DataFormatString = "{0:dd-MM-yyyy}", ApplyFormatInEditMode = true)]
+        public DateTime ? DateOfBirth { get; set; }
+
 
         [Display(Name = "Email Address")]
         public string EmailAddress { get; set; }
 
 
-        [Display(Name = "Type")]
+        [Display(Name = "Student Type")]
         public string Type { get; set; }
 
 
         public Subject Subject { get; set; }
 
-      
+
+        [Display(Name = "Student's Class")]
         public Form Form { get; set; }
 
 
