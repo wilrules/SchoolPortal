@@ -61,28 +61,11 @@
 				 }, htmlAttributes: new { @class = "form-control", })
 	</div>
 
-	@*<div>
+	<div>
 			@Html.LabelFor(m => m.Student.Form.Id)
 			@Html.DropDownListFor(m => m.Student.Form.Name, new SelectList(Model.Form, "Name", "Name"), "", new { @class = "form-control"  })
 
-
-
-
-
-			<div class="form-group">
-				@Html.LabelFor(m => m.Student.DateOfBirth, htmlAttributes: new { @class = "control-label col-md-2" })
-				<div class="col-md-10">
-					@Html.EditorFor(m => m.Student.DateOfBirth, new { type = "date" })
-					@Html.ValidationMessageFor(m => m.Student.DateOfBirth, "", new { @class = "text-danger" })
-				</div>
-			</div>
-
-
-
-
-
-
-		</div>*@
+		</div>
 
 	<br />
 	<br />
