@@ -1,38 +1,28 @@
-﻿
-@model IEnumerable<SchoolPortal.Models.Student>
-
+﻿@model IEnumerable<SchoolPortal.Models.Student>
 
 @{
 	ViewBag.Title = "Index";
 	Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
+<br />
+<br />
 
-<div></div>
+<table class="table table-bordered table-hover">
+	<thead>
+		<tr>
 
+			<th>First Name</th>
+			<th>Last Name</th>
+			<th>Type</th>
+			<th>Gender</th>
+			<th>Class</th>
+		</tr>
+	</thead>
 
-	<table class="table table-bordered table-hover">
-		<thead>
-			<tr>
-
-				<th>First Name</th>
-				<th>Last Name</th>
-				<th>Type</th>
-				<th>Gender</th>
-				<th>Class</th>
-
-
-			</tr>
-
-
-
-
-
-		</thead>
-
-		<tbody>
-			@foreach (var students in Model)
-			{
+	<tbody>
+		@foreach (var students in Model)
+		{
 			<tr>
 				<td>@Html.ActionLink(students.FirstName, "Details", "Student", new { id = students.Id }, null)</td>
 				<td>@Html.ActionLink(students.Lastname, "Details", "Student", new { id = students.Id }, null)</td>
@@ -52,30 +42,7 @@
 						</ul>
 					</div>
 				</td>
-
-
-
-
-
 			</tr>
-			}
-
-
-
-
-
-
-		</tbody>
-
-
-
-
-
-
-	</table>
-
-
-
-
-
-
+		}
+	</tbody>
+</table>
