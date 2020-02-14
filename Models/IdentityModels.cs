@@ -20,11 +20,22 @@ namespace SchoolPortal.Models
 
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
-     
-        public DbSet <Form> Forms { get; set; }
-        public DbSet <Subject> Subjects { get; set; }
+
+        public DbSet<Gender> Genders { get; set; }
+
         public DbSet <Student> Students { get; set; }
+
+        public DbSet <StudentAddress> StudentAddress { get; set; }
       
+        public DbSet<Subject> Subjects { get; set; }
+
+        public DbSet <Year> Years{ get; set; }
+      
+
+        //public DbSet<Year> Years { get; set; }
+
+
+
         public ApplicationDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)
         {

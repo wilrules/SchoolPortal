@@ -32,10 +32,10 @@ namespace SchoolPortal.Controllers
 
 
 
-       // GET: Student
+        // GET: Student
         public ActionResult Index()
         {
-            var students = _context.Students.Include(c =>c.Form).ToList();
+            var students = _context.Students.Include(c => c.Gender).ToList();
             return View(students);
         }
 
@@ -59,17 +59,20 @@ namespace SchoolPortal.Controllers
 
         public ActionResult New()
         {
-            var forms = _context.Forms.ToList();
-            var viewmodel = new NewStudentViewModel
-            {
-                Form = forms
-            };
+
+            var genders = _context.Genders.ToList();
+            //var years = _context.Years.ToList();
+        var viewmodel = new NewStudentViewModel
+        {
+            Genders = genders,
+            //Years = years
+        };
 
             return View(viewmodel);
-        }
+    }
 
 
-        [HttpPost]
+    [HttpPost]
         public ActionResult Create(Student student)
         {
             _context.Students.Add(student);

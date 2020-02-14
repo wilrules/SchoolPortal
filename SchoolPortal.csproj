@@ -171,185 +171,26 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\StudentController.cs" />
-    <Compile Include="Controllers\SubjectController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202002062015394_InitialModel.cs" />
-    <Compile Include="Migrations\202002062015394_InitialModel.Designer.cs">
-      <DependentUpon>202002062015394_InitialModel.cs</DependentUpon>
+    <Compile Include="Migrations\202002140612367_001.cs" />
+    <Compile Include="Migrations\202002140612367_001.Designer.cs">
+      <DependentUpon>202002140612367_001.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202002062057132_modelupdated.cs" />
-    <Compile Include="Migrations\202002062057132_modelupdated.Designer.cs">
-      <DependentUpon>202002062057132_modelupdated.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202002062233515_test3.cs" />
-    <Compile Include="Migrations\202002062233515_test3.Designer.cs">
-      <DependentUpon>202002062233515_test3.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202002071625479_gender.cs" />
-    <Compile Include="Migrations\202002071625479_gender.Designer.cs">
-      <DependentUpon>202002071625479_gender.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202002071750010_fixingstudent.cs" />
-    <Compile Include="Migrations\202002071750010_fixingstudent.Designer.cs">
-      <DependentUpon>202002071750010_fixingstudent.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202002071754507_genderremoved.cs" />
-    <Compile Include="Migrations\202002071754507_genderremoved.Designer.cs">
-      <DependentUpon>202002071754507_genderremoved.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202002071758494_genderadded.cs" />
-    <Compile Include="Migrations\202002071758494_genderadded.Designer.cs">
-      <DependentUpon>202002071758494_genderadded.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202002071830550_yearremoved.cs" />
-    <Compile Include="Migrations\202002071830550_yearremoved.Designer.cs">
-      <DependentUpon>202002071830550_yearremoved.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202002071847200_form.cs" />
-    <Compile Include="Migrations\202002071847200_form.Designer.cs">
-      <DependentUpon>202002071847200_form.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202002071854319_Linkedform.cs" />
-    <Compile Include="Migrations\202002071854319_Linkedform.Designer.cs">
-      <DependentUpon>202002071854319_Linkedform.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202002071916128_testdbset.cs" />
-    <Compile Include="Migrations\202002071916128_testdbset.Designer.cs">
-      <DependentUpon>202002071916128_testdbset.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202002071936425_empty.cs" />
-    <Compile Include="Migrations\202002071936425_empty.Designer.cs">
-      <DependentUpon>202002071936425_empty.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202002071938378_add-migration seed1.cs" />
-    <Compile Include="Migrations\202002071938378_add-migration seed1.Designer.cs">
-      <DependentUpon>202002071938378_add-migration seed1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202002071954005_typedchanged.cs" />
-    <Compile Include="Migrations\202002071954005_typedchanged.Designer.cs">
-      <DependentUpon>202002071954005_typedchanged.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202002080754576_updatedstu.cs" />
-    <Compile Include="Migrations\202002080754576_updatedstu.Designer.cs">
-      <DependentUpon>202002080754576_updatedstu.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202002080857167_formrepair.cs" />
-    <Compile Include="Migrations\202002080857167_formrepair.Designer.cs">
-      <DependentUpon>202002080857167_formrepair.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202002080954037_formlinked.cs" />
-    <Compile Include="Migrations\202002080954037_formlinked.Designer.cs">
-      <DependentUpon>202002080954037_formlinked.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202002081000471_test123.cs" />
-    <Compile Include="Migrations\202002081000471_test123.Designer.cs">
-      <DependentUpon>202002081000471_test123.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202002081014035_empty1.cs" />
-    <Compile Include="Migrations\202002081014035_empty1.Designer.cs">
-      <DependentUpon>202002081014035_empty1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202002081027268_form2.cs" />
-    <Compile Include="Migrations\202002081027268_form2.Designer.cs">
-      <DependentUpon>202002081027268_form2.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202002081031524_linked1.cs" />
-    <Compile Include="Migrations\202002081031524_linked1.Designer.cs">
-      <DependentUpon>202002081031524_linked1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202002081109026_yes.cs" />
-    <Compile Include="Migrations\202002081109026_yes.Designer.cs">
-      <DependentUpon>202002081109026_yes.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202002081225073_trying.cs" />
-    <Compile Include="Migrations\202002081225073_trying.Designer.cs">
-      <DependentUpon>202002081225073_trying.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202002081231342_Add-migration reload.cs" />
-    <Compile Include="Migrations\202002081231342_Add-migration reload.Designer.cs">
-      <DependentUpon>202002081231342_Add-migration reload.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202002081253552_subby.cs" />
-    <Compile Include="Migrations\202002081253552_subby.Designer.cs">
-      <DependentUpon>202002081253552_subby.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202002081315099_progress.cs" />
-    <Compile Include="Migrations\202002081315099_progress.Designer.cs">
-      <DependentUpon>202002081315099_progress.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202002081320063_going.cs" />
-    <Compile Include="Migrations\202002081320063_going.Designer.cs">
-      <DependentUpon>202002081320063_going.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202002081343514_dandan.cs" />
-    <Compile Include="Migrations\202002081343514_dandan.Designer.cs">
-      <DependentUpon>202002081343514_dandan.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202002081849365_emptyone.cs" />
-    <Compile Include="Migrations\202002081849365_emptyone.Designer.cs">
-      <DependentUpon>202002081849365_emptyone.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202002081910276_rel.cs" />
-    <Compile Include="Migrations\202002081910276_rel.Designer.cs">
-      <DependentUpon>202002081910276_rel.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202002081931043_forming.cs" />
-    <Compile Include="Migrations\202002081931043_forming.Designer.cs">
-      <DependentUpon>202002081931043_forming.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202002081939496_wayout.cs" />
-    <Compile Include="Migrations\202002081939496_wayout.Designer.cs">
-      <DependentUpon>202002081939496_wayout.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202002082022081_form4.cs" />
-    <Compile Include="Migrations\202002082022081_form4.Designer.cs">
-      <DependentUpon>202002082022081_form4.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202002082045436_empy.cs" />
-    <Compile Include="Migrations\202002082045436_empy.Designer.cs">
-      <DependentUpon>202002082045436_empy.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202002082046329_lolo.cs" />
-    <Compile Include="Migrations\202002082046329_lolo.Designer.cs">
-      <DependentUpon>202002082046329_lolo.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202002082152500_y.cs" />
-    <Compile Include="Migrations\202002082152500_y.Designer.cs">
-      <DependentUpon>202002082152500_y.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202002090831294_changes.cs" />
-    <Compile Include="Migrations\202002090831294_changes.Designer.cs">
-      <DependentUpon>202002090831294_changes.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202002091302480_dob.cs" />
-    <Compile Include="Migrations\202002091302480_dob.Designer.cs">
-      <DependentUpon>202002091302480_dob.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202002091426384_dobedit.cs" />
-    <Compile Include="Migrations\202002091426384_dobedit.Designer.cs">
-      <DependentUpon>202002091426384_dobedit.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202002091749045_studentfix1.cs" />
-    <Compile Include="Migrations\202002091749045_studentfix1.Designer.cs">
-      <DependentUpon>202002091749045_studentfix1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202002091752311_arrival.cs" />
-    <Compile Include="Migrations\202002091752311_arrival.Designer.cs">
-      <DependentUpon>202002091752311_arrival.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202002091759580_T.cs" />
-    <Compile Include="Migrations\202002091759580_T.Designer.cs">
-      <DependentUpon>202002091759580_T.cs</DependentUpon>
+    <Compile Include="Migrations\202002140613394_DomainGenericGender.cs" />
+    <Compile Include="Migrations\202002140613394_DomainGenericGender.Designer.cs">
+      <DependentUpon>202002140613394_DomainGenericGender.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
-    <Compile Include="Models\Form.cs" />
+    <Compile Include="Models\Gender.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Student.cs" />
+    <Compile Include="Models\StudentAddress.cs" />
     <Compile Include="Models\Subject.cs" />
+    <Compile Include="Models\Year.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
     <Compile Include="ViewModels\NewStudentViewModel.cs" />
@@ -477,131 +318,11 @@
     <Content Include="Scripts\jquery-3.4.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202002062015394_InitialModel.resx">
-      <DependentUpon>202002062015394_InitialModel.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202002140612367_001.resx">
+      <DependentUpon>202002140612367_001.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202002062057132_modelupdated.resx">
-      <DependentUpon>202002062057132_modelupdated.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202002062233515_test3.resx">
-      <DependentUpon>202002062233515_test3.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202002071625479_gender.resx">
-      <DependentUpon>202002071625479_gender.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202002071750010_fixingstudent.resx">
-      <DependentUpon>202002071750010_fixingstudent.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202002071754507_genderremoved.resx">
-      <DependentUpon>202002071754507_genderremoved.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202002071758494_genderadded.resx">
-      <DependentUpon>202002071758494_genderadded.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202002071830550_yearremoved.resx">
-      <DependentUpon>202002071830550_yearremoved.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202002071847200_form.resx">
-      <DependentUpon>202002071847200_form.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202002071854319_Linkedform.resx">
-      <DependentUpon>202002071854319_Linkedform.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202002071916128_testdbset.resx">
-      <DependentUpon>202002071916128_testdbset.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202002071936425_empty.resx">
-      <DependentUpon>202002071936425_empty.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202002071938378_add-migration seed1.resx">
-      <DependentUpon>202002071938378_add-migration seed1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202002071954005_typedchanged.resx">
-      <DependentUpon>202002071954005_typedchanged.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202002080754576_updatedstu.resx">
-      <DependentUpon>202002080754576_updatedstu.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202002080857167_formrepair.resx">
-      <DependentUpon>202002080857167_formrepair.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202002080954037_formlinked.resx">
-      <DependentUpon>202002080954037_formlinked.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202002081000471_test123.resx">
-      <DependentUpon>202002081000471_test123.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202002081014035_empty1.resx">
-      <DependentUpon>202002081014035_empty1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202002081027268_form2.resx">
-      <DependentUpon>202002081027268_form2.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202002081031524_linked1.resx">
-      <DependentUpon>202002081031524_linked1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202002081109026_yes.resx">
-      <DependentUpon>202002081109026_yes.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202002081225073_trying.resx">
-      <DependentUpon>202002081225073_trying.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202002081231342_Add-migration reload.resx">
-      <DependentUpon>202002081231342_Add-migration reload.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202002081253552_subby.resx">
-      <DependentUpon>202002081253552_subby.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202002081315099_progress.resx">
-      <DependentUpon>202002081315099_progress.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202002081320063_going.resx">
-      <DependentUpon>202002081320063_going.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202002081343514_dandan.resx">
-      <DependentUpon>202002081343514_dandan.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202002081849365_emptyone.resx">
-      <DependentUpon>202002081849365_emptyone.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202002081910276_rel.resx">
-      <DependentUpon>202002081910276_rel.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202002081931043_forming.resx">
-      <DependentUpon>202002081931043_forming.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202002081939496_wayout.resx">
-      <DependentUpon>202002081939496_wayout.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202002082022081_form4.resx">
-      <DependentUpon>202002082022081_form4.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202002082045436_empy.resx">
-      <DependentUpon>202002082045436_empy.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202002082046329_lolo.resx">
-      <DependentUpon>202002082046329_lolo.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202002082152500_y.resx">
-      <DependentUpon>202002082152500_y.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202002090831294_changes.resx">
-      <DependentUpon>202002090831294_changes.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202002091302480_dob.resx">
-      <DependentUpon>202002091302480_dob.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202002091426384_dobedit.resx">
-      <DependentUpon>202002091426384_dobedit.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202002091749045_studentfix1.resx">
-      <DependentUpon>202002091749045_studentfix1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202002091752311_arrival.resx">
-      <DependentUpon>202002091752311_arrival.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202002091759580_T.resx">
-      <DependentUpon>202002091759580_T.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202002140613394_DomainGenericGender.resx">
+      <DependentUpon>202002140613394_DomainGenericGender.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

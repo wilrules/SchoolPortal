@@ -8,7 +8,11 @@ namespace SchoolPortal.ViewModels
 {
     public class NewStudentViewModel
     {
-        public IEnumerable<Form> Form { get; set; }
+        
+        public IEnumerable<Gender> Genders { get; set; }
+
         public Student Student { get; set; }
+
+        //public IEnumerable<Year> Years { get; set; }
     }
 }

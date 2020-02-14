@@ -9,11 +9,13 @@
 <h3>@Model.FirstName @Model.MiddleName @Model.Lastname</h3>
 <ul>
 	<li>@Model.EmailAddress</li>
-	<li>@Model.Type</li>
-	<li>@Model.Gender</li>
-	<li>@Model.Form</li>
+	
+	
+	@*<li>@Model.GenderId</li>*@
+
+	
 	<li>@Model.DateOfBirth.Value.ToShortDateString()</li>
-	<li>@(DateTime.Today.Subtract(@Model.DateOfBirth.Value).Days.ToString())</li>
+	@*<li>@(DateTime.Today.Subtract(@Model.DateOfBirth.Value).Days.ToString())</li>*@
    @{
 		var date = DateTime.Now.Subtract(@Model.DateOfBirth.Value).Days.ToString();
 		var age = @Convert.ToInt32(date) / 365;
