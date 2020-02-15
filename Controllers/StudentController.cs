@@ -62,7 +62,7 @@ namespace SchoolPortal.Controllers
 
             var genders = _context.Genders.ToList();
             var years = _context.Years.ToList();
-        var viewmodel = new NewStudentViewModel
+            var viewmodel = new NewStudentViewModel
         {
             Genders = genders,
             Years = years

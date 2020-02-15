@@ -29,10 +29,10 @@ namespace SchoolPortal.Models
       
         public DbSet<Subject> Subjects { get; set; }
 
-        public DbSet <Year> Years{ get; set; }
-      
+        public DbSet<Year> Years { get; set; }
 
-        //public DbSet<Year> Years { get; set; }
+
+
 
 
 
