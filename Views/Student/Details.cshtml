@@ -1,5 +1,6 @@
 ﻿@model SchoolPortal.Models.Student
 
+
 @{
 	ViewBag.Title = "Details";
 	Layout = "~/Views/Shared/_Layout.cshtml";
@@ -11,11 +12,10 @@
 
 	<li>@Model.Year</li>
 
-	<li>@Model.YearId</li>
-
+	
 	<li>@Model.DateOfBirth.Value.ToShortDateString()</li>
-
-	@{
+	@*<li>@(DateTime.Today.Subtract(@Model.DateOfBirth.Value).Days.ToString())</li>*@
+   @{
 		var date = DateTime.Now.Subtract(@Model.DateOfBirth.Value).Days.ToString();
 		var age = @Convert.ToInt32(date) / 365;
 	}
