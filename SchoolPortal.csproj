@@ -182,6 +182,10 @@
     <Compile Include="Migrations\202002140613394_DomainGenericGender.Designer.cs">
       <DependentUpon>202002140613394_DomainGenericGender.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202002141326382_002.cs" />
+    <Compile Include="Migrations\202002141326382_002.Designer.cs">
+      <DependentUpon>202002141326382_002.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Gender.cs" />
@@ -323,6 +327,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202002140613394_DomainGenericGender.resx">
       <DependentUpon>202002140613394_DomainGenericGender.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202002141326382_002.resx">
+      <DependentUpon>202002141326382_002.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

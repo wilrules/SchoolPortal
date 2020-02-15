@@ -13,6 +13,6 @@ namespace SchoolPortal.ViewModels
 
         public Student Student { get; set; }
 
-        //public IEnumerable<Year> Years { get; set; }
+        public IEnumerable<Year> Years { get; set; }
     }
 }

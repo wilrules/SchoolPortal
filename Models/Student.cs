@@ -38,10 +38,10 @@ namespace SchoolPortal.Models
 
 
 
-
+        [Display(Name = "Class")]
         public IList<Year> Year { get; set; }
 
-        [Display(Name = "Class")]
+        
         public byte YearId { get; set; }
 
 
