@@ -45,6 +45,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=2.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -157,9 +160,6 @@
     <Reference Include="Microsoft.Owin.Security.OAuth">
       <HintPath>packages\Microsoft.Owin.Security.OAuth.4.0.1\lib\net45\Microsoft.Owin.Security.OAuth.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
-      <HintPath>packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\BundleConfig.cs" />
@@ -174,25 +174,17 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202002152248321_001.cs" />
-    <Compile Include="Migrations\202002152248321_001.Designer.cs">
-      <DependentUpon>202002152248321_001.cs</DependentUpon>
+    <Compile Include="Migrations\202002161433090_Fire.cs" />
+    <Compile Include="Migrations\202002161433090_Fire.Designer.cs">
+      <DependentUpon>202002161433090_Fire.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202002152253344_002.cs" />
-    <Compile Include="Migrations\202002152253344_002.Designer.cs">
-      <DependentUpon>202002152253344_002.cs</DependentUpon>
+    <Compile Include="Migrations\202002161434275_GENERIC.cs" />
+    <Compile Include="Migrations\202002161434275_GENERIC.Designer.cs">
+      <DependentUpon>202002161434275_GENERIC.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202002152306234_003.cs" />
-    <Compile Include="Migrations\202002152306234_003.Designer.cs">
-      <DependentUpon>202002152306234_003.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202002152314050_004.cs" />
-    <Compile Include="Migrations\202002152314050_004.Designer.cs">
-      <DependentUpon>202002152314050_004.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202002152317318_005.cs" />
-    <Compile Include="Migrations\202002152317318_005.Designer.cs">
-      <DependentUpon>202002152317318_005.cs</DependentUpon>
+    <Compile Include="Migrations\202002161436101_GENERIC1.cs" />
+    <Compile Include="Migrations\202002161436101_GENERIC1.Designer.cs">
+      <DependentUpon>202002161436101_GENERIC1.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -209,10 +201,6 @@
     <Compile Include="ViewModels\StudentsClassesViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_Data\aspnet-SchoolPortal-20200205080741.mdf" />
-    <Content Include="App_Data\aspnet-SchoolPortal-20200205080741_log.ldf">
-      <DependentUpon>aspnet-SchoolPortal-20200205080741.mdf</DependentUpon>
-    </Content>
     <Content Include="Content\bootstrap-lumen.css" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
@@ -318,23 +306,6 @@
     <Content Include="Views\Student\Details.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202002152248321_001.resx">
-      <DependentUpon>202002152248321_001.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202002152253344_002.resx">
-      <DependentUpon>202002152253344_002.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202002152306234_003.resx">
-      <DependentUpon>202002152306234_003.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202002152314050_004.resx">
-      <DependentUpon>202002152314050_004.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202002152317318_005.resx">
-      <DependentUpon>202002152317318_005.cs</DependentUpon>
-    </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
@@ -346,6 +317,20 @@
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.4.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\202002161433090_Fire.resx">
+      <DependentUpon>202002161433090_Fire.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202002161434275_GENERIC.resx">
+      <DependentUpon>202002161434275_GENERIC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202002161436101_GENERIC1.resx">
+      <DependentUpon>202002161436101_GENERIC1.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
