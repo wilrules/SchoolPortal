@@ -31,6 +31,8 @@ namespace SchoolPortal.Models
 
         public DbSet<Year> Years { get; set; }
 
+        public DbSet<Teacher> Teachers { get; set; }
+
 
 
 

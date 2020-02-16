@@ -7,7 +7,6 @@ namespace SchoolPortal.Models
 {
     public class Year
     {
-
         public int YearId { get; set; }
 
         public int YearNumber { get; set; }
@@ -15,5 +14,7 @@ namespace SchoolPortal.Models
         public string YearName { get; set; }
 
         public IList<Student> Student { get; set; }
+
+        public Teacher Teacher { get; set; }
     }
 }
