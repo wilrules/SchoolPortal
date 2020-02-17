@@ -9,7 +9,7 @@ namespace SchoolPortal.Models
 {
     public class StudentAddress
     {
-       
+        [ForeignKey("Student")]
         public int StudentAddressId { get; set; }
 
         public string Address1 { get; set; }

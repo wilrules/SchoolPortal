@@ -192,6 +192,10 @@
     <Compile Include="Migrations\202002161447164_Teacher.Designer.cs">
       <DependentUpon>202002161447164_Teacher.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202002170746387_0746.cs" />
+    <Compile Include="Migrations\202002170746387_0746.Designer.cs">
+      <DependentUpon>202002170746387_0746.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Gender.cs" />
@@ -350,6 +354,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202002161447164_Teacher.resx">
       <DependentUpon>202002161447164_Teacher.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202002170746387_0746.resx">
+      <DependentUpon>202002170746387_0746.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
