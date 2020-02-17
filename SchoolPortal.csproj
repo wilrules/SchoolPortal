@@ -172,6 +172,7 @@
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\StudentController.cs" />
     <Compile Include="Controllers\TeachersController.cs" />
+    <Compile Include="Controllers\YearsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -315,6 +316,11 @@
     <Content Include="Views\Teachers\Details.cshtml" />
     <Content Include="Views\Teachers\Edit.cshtml" />
     <Content Include="Views\Teachers\Index.cshtml" />
+    <Content Include="Views\Years\Create.cshtml" />
+    <Content Include="Views\Years\Delete.cshtml" />
+    <Content Include="Views\Years\Details.cshtml" />
+    <Content Include="Views\Years\Edit.cshtml" />
+    <Content Include="Views\Years\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

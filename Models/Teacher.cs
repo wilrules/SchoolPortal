@@ -24,5 +24,9 @@ namespace SchoolPortal.Models
 
         [Display(Name = "Class")]
         public Year Year { get; set; }
+
+
+
+
     }
 }

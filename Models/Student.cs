@@ -53,7 +53,8 @@ namespace SchoolPortal.Models
 
         [Display(Name = "Gender")]
         public byte GenderId { get; set; }
-     
+
+        [Required]
         public virtual StudentAddress StudentAddress { get; set; }
 
     }

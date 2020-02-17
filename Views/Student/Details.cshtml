@@ -6,16 +6,25 @@
 	Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
+
+	
+
+
+
+
+
+
+
 <h3>@Model.FirstName @Model.MiddleName @Model.Lastname</h3>
 <ul>
 	<li>@Model.EmailAddress</li>
 
 	<li>@Model.Year</li>
 
-	
+
 	<li>@Model.DateOfBirth.Value.ToShortDateString()</li>
 	@*<li>@(DateTime.Today.Subtract(@Model.DateOfBirth.Value).Days.ToString())</li>*@
-   @{
+	@{
 		var date = DateTime.Now.Subtract(@Model.DateOfBirth.Value).Days.ToString();
 		var age = @Convert.ToInt32(date) / 365;
 	}

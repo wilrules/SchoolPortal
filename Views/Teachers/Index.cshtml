@@ -12,54 +12,48 @@
 <table class="table table-bordered table-hover">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.Year.YearName)
+           <label><b>Teacher's Name</b></label>
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Title)
+            Class
         </th>
-        <th>
-            @Html.DisplayNameFor(model => model.FirstName)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.LastName)
-        </th>
-        <th></th>
+       
+       
+      
     </tr>
 
     @foreach (var item in Model)
     {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Year.YearName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Title)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.FirstName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.LastName)
-            </td>
+<tr>
 
 
-            <td>
-                <div class="btn-group">
-                    <a href="#" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-                        Select Action
-                        <span class="caret"></span>
-                    </a>
-                    <ul class="dropdown-menu">
-                        <li>@Html.ActionLink("View Details", "Details", "Teachers", new { id = item.TeacherId }, null)</li>
-                        <li>@Html.ActionLink("Edit", "Edit", "Teachers", new { id = item.TeacherId }, null)</li>
-                        <li>@Html.ActionLink("Remove", "Delete", "Teachers", new { id = item.TeacherId }, null)</li>
-                        @*<li><a href="#">Dropdown link</a></li>
-                            <li><a href="#">Dropdown link</a></li>*@
+    <td>
+        @Html.DisplayFor(modelItem => item.Title)  @Html.DisplayFor(modelItem => item.FirstName)   @Html.DisplayFor(modelItem => item.LastName)
+    </td>
 
-                    </ul>
-                </div>
-            </td>
-        </tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.Year.YearName)
+    </td>
+
+
+
+    <td>
+        <div class="btn-group">
+            <a href="#" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                Select Action
+                <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu">
+                <li>@Html.ActionLink("View Details", "Details", "Teachers", new { id = item.TeacherId }, null)</li>
+                <li>@Html.ActionLink("Edit", "Edit", "Teachers", new { id = item.TeacherId }, null)</li>
+                <li>@Html.ActionLink("Remove", "Delete", "Teachers", new { id = item.TeacherId }, null)</li>
+                @*<li><a href="#">Dropdown link</a></li>
+                    <li><a href="#">Dropdown link</a></li>*@
+
+            </ul>
+        </div>
+    </td>
+</tr>
     }
 
 </table>

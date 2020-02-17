@@ -1,0 +1,42 @@
+﻿@model SchoolPortal.Models.Year
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Year</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Teacher.Title)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Teacher.Title)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.YearNumber)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.YearNumber)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.YearName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.YearName)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.YearId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
