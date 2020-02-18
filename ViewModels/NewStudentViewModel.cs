@@ -6,7 +6,7 @@ using System.Web;
 
 namespace SchoolPortal.ViewModels
 {
-    public class NewStudentViewModel
+    public class StudentFormViewModel
     {
         
         public IEnumerable<Gender> Genders { get; set; }

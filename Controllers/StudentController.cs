@@ -7,6 +7,7 @@ using System.Web;
 using System.Web.Mvc;
 using SchoolPortal.ViewModels;
 using System.Data.Entity.Validation;
+using System.Net;
 
 namespace SchoolPortal.Controllers
 {
@@ -15,7 +16,7 @@ namespace SchoolPortal.Controllers
 
         // DB context to access the database
         private ApplicationDbContext _context;
-      
+
 
         //initializing the _context in a construtor
         public StudentController()
@@ -35,7 +36,7 @@ namespace SchoolPortal.Controllers
         // GET: Student
         public ActionResult Index()
         {
-            var students = _context.Students.Include(c => c.Gender).Include(y =>y.Year).ToList();
+            var students = _context.Students.Include(c => c.Gender).Include(y => y.Year).ToList();
             return View(students);
         }
 
@@ -62,17 +63,17 @@ namespace SchoolPortal.Controllers
 
             var genders = _context.Genders.ToList();
             var years = _context.Years.ToList();
-            var viewmodel = new NewStudentViewModel
-        {
-            Genders = genders,
-            Years = years
-        };
+            var viewmodel = new StudentFormViewModel
+            {
+                Genders = genders,
+                Years = years
+            };
 
-            return View(viewmodel);
-    }
+            return View("StudentForm", viewmodel);
+        }
 
 
-    [HttpPost]
+        [HttpPost]
         public ActionResult Create(Student student)
         {
             _context.Students.Add(student);
@@ -84,9 +85,26 @@ namespace SchoolPortal.Controllers
         }
 
 
+        public ActionResult Edit(int? id)
+        {
+            var student = _context.Students.SingleOrDefault(s => s.Id == id);
+
+            if (student == null)
+            {
+                return HttpNotFound();
+            }
+
+            var viewmodel = new StudentFormViewModel
+            {
+                Student = student,
+                Genders = _context.Genders.ToList(),
+                Years = _context.Years.ToList()
+            };
+
+            return View("StudentForm", viewmodel);
 
 
 
-
+        }
     }
 }

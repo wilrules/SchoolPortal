@@ -11,9 +11,10 @@
 <table class="table table-bordered table-hover">
 	<thead>
 		<tr>
-			<th>First Name</th>
-			<th>Last Name</th>
-			<th>Gender</th>
+			<th><b> Name</b></th>
+
+			<th><b>Class</b></th>
+			<th><b>Gender</b></th>
 		</tr>
 	</thead>
 
@@ -21,11 +22,12 @@
 		@foreach (var students in Model)
 		{
 		<tr>
-			<td>@students.FirstName</td>
-			<td>@students.Lastname</td>
+			<td>@students.FirstName @students.MiddleName  @students.Lastname</td>
 			<td>@students.Year.YearName</td>
-
 			<td>@students.Gender.Name</td>
+			
+
+
 
 			<td>
 				<div class="btn-group">
@@ -35,9 +37,8 @@
 					</a>
 					<ul class="dropdown-menu">
 						<li>@Html.ActionLink("View Details", "Details", "Student", new { id = students.Id }, null)</li>
-						<li><a href="#">Dropdown link</a></li>
-						<li><a href="#">Dropdown link</a></li>
-						<li><a href="#">Dropdown link</a></li>
+						<li>@Html.ActionLink("Edit Student", "Edit", "Student", new { id = students.Id }, null)</li>
+						<li>@Html.ActionLink("View Details", "Details", "Student", new { id = students.Id }, null)</li>
 					</ul>
 				</div>
 			</td>

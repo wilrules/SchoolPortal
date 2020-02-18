@@ -15,6 +15,9 @@ namespace SchoolPortal.Controllers
     {
         private ApplicationDbContext db = new ApplicationDbContext();
 
+
+
+
         // GET: Years
         public ActionResult Index()
         {

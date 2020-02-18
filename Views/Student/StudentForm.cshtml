@@ -1,4 +1,4 @@
-﻿@model SchoolPortal.ViewModels.NewStudentViewModel
+﻿@model SchoolPortal.ViewModels.StudentFormViewModel
 
 @{
 	ViewBag.Title = "New";
@@ -57,7 +57,7 @@
 
 		<div class="form-group">
 			@Html.LabelFor(m => m.Student.DateOfBirth)
-			@Html.TextBoxFor(m => m.Student.DateOfBirth, new { @class = "form-control datepicker", placeholder = "dd/mm/yyyy" })
+			@Html.TextBoxFor(m => m.Student.DateOfBirth, "{0:d MMM yyyy}" ,new { @class = "form-control datepicker", placeholder = "dd/mm/yyyy" })
 		</div>
 
 		<br />
