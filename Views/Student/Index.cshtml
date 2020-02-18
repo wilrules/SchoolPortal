@@ -20,27 +20,28 @@
 	<tbody>
 		@foreach (var students in Model)
 		{
-			<tr>
-				<td>@students.FirstName</td>
-				<td>@students.Lastname</td>
+		<tr>
+			<td>@students.FirstName</td>
+			<td>@students.Lastname</td>
+			<td>@students.Year.YearName</td>
 
-				<td>@students.Gender.Name</td>
+			<td>@students.Gender.Name</td>
 
-				<td>
-					<div class="btn-group">
-						<a href="#" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-							Select Action
-							<span class="caret"></span>
-						</a>
-						<ul class="dropdown-menu">
-							<li>@Html.ActionLink("View Details", "Details", "Student", new { id = students.Id }, null)</li>
-							<li><a href="#">Dropdown link</a></li>
-							<li><a href="#">Dropdown link</a></li>
-							<li><a href="#">Dropdown link</a></li>
-						</ul>
-					</div>
-				</td>
-			</tr>
+			<td>
+				<div class="btn-group">
+					<a href="#" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+						Select Action
+						<span class="caret"></span>
+					</a>
+					<ul class="dropdown-menu">
+						<li>@Html.ActionLink("View Details", "Details", "Student", new { id = students.Id }, null)</li>
+						<li><a href="#">Dropdown link</a></li>
+						<li><a href="#">Dropdown link</a></li>
+						<li><a href="#">Dropdown link</a></li>
+					</ul>
+				</div>
+			</td>
+		</tr>
 		}
 	</tbody>
 </table>

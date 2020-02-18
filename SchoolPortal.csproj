@@ -196,6 +196,22 @@
     <Compile Include="Migrations\202002170746387_0746.Designer.cs">
       <DependentUpon>202002170746387_0746.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202002172129199_MU.cs" />
+    <Compile Include="Migrations\202002172129199_MU.Designer.cs">
+      <DependentUpon>202002172129199_MU.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202002180423139_ForeignRemoved.cs" />
+    <Compile Include="Migrations\202002180423139_ForeignRemoved.Designer.cs">
+      <DependentUpon>202002180423139_ForeignRemoved.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202002180510211_Stu1.cs" />
+    <Compile Include="Migrations\202002180510211_Stu1.Designer.cs">
+      <DependentUpon>202002180510211_Stu1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202002180533328_Stu2.cs" />
+    <Compile Include="Migrations\202002180533328_Stu2.Designer.cs">
+      <DependentUpon>202002180533328_Stu2.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Gender.cs" />
@@ -357,6 +373,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202002170746387_0746.resx">
       <DependentUpon>202002170746387_0746.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202002172129199_MU.resx">
+      <DependentUpon>202002172129199_MU.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202002180423139_ForeignRemoved.resx">
+      <DependentUpon>202002180423139_ForeignRemoved.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202002180510211_Stu1.resx">
+      <DependentUpon>202002180510211_Stu1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202002180533328_Stu2.resx">
+      <DependentUpon>202002180533328_Stu2.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -1,48 +1,45 @@
 ﻿@model IEnumerable<SchoolPortal.Models.Year>
 
 @{
-    ViewBag.Title = "Teachers";
+    ViewBag.Title = "Index";
 }
 
-<h2>Classes</h2>
+<h2>Index</h2>
 
 <p>
-    @*@Html.ActionLink("Create New", "Create")*@
+    @Html.ActionLink("Create New", "Create")
 </p>
-<table class="table table-bordered table-hover">
+<table class="table">
     <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Teacher.Title)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.YearNumber)
+        </th>
         <th>
             @Html.DisplayNameFor(model => model.YearName)
         </th>
-        <th>
-           <lable><b>Class Teacher</b></lable>
-        </th>
-     
-
-
         <th></th>
     </tr>
 
 @foreach (var item in Model) {
-<tr>
-    <td>
-        @Html.DisplayFor(modelItem => item.YearName)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.Teacher.Title) @Html.DisplayFor(modelItem => item.Teacher.FirstName)  @Html.DisplayFor(modelItem => item.Teacher.LastName)
-    </td>
-  
-
-
-    <td>
-        @Html.DisplayFor(modelItem => item.Student)
-
-    <td>
-        @Html.ActionLink("Edit", "Edit", new { id = item.YearId }) |
-        @Html.ActionLink("Details", "Details", new { id = item.YearId }) |
-        @Html.ActionLink("Delete", "Delete", new { id = item.YearId })
-    </td>
-</tr>
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Teacher.Title)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.YearNumber)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.YearName)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.YearId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.YearId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.YearId })
+        </td>
+    </tr>
 }
 
 </table>

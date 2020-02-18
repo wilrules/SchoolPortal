@@ -38,21 +38,26 @@ namespace SchoolPortal.Models
 
 
 
+        //Rels
+        public int YearId { get; set; }
+
         [Display(Name = "Class")]
-        public IList<Year> Year { get; set; }
+        public Year Year { get; set; }
 
 
-        public byte YearId { get; set; }
-
-
-
-
+        // Rels
+        [Display(Name = "Gender")]
+        public byte GenderId { get; set; }
 
         [Display(Name = "Gender")]
         public Gender Gender { get; set; }
 
-        [Display(Name = "Gender")]
-        public byte GenderId { get; set; }
+
+
+
+
+
+
 
         [Required]
         public virtual StudentAddress StudentAddress { get; set; }

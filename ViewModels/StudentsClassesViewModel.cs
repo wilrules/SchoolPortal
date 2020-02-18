@@ -10,5 +10,9 @@ namespace SchoolPortal.ViewModels
     {
     
         public List<Student> Students { get; set; }
+
+        public List<Year> Years { get; set; }
+
+        public List<Teacher> Teachers { get; set; }
     }
 }

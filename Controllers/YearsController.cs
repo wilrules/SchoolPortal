@@ -7,6 +7,7 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using SchoolPortal.Models;
+using SchoolPortal.ViewModels;
 
 namespace SchoolPortal.Controllers
 {
@@ -119,6 +120,14 @@ namespace SchoolPortal.Controllers
             db.SaveChanges();
             return RedirectToAction("Index");
         }
+
+
+
+
+
+
+
+
 
         protected override void Dispose(bool disposing)
         {
