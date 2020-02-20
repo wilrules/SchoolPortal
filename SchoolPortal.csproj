@@ -214,6 +214,10 @@
     <Compile Include="Migrations\202002201949476_Yeartosubject.Designer.cs">
       <DependentUpon>202002201949476_Yeartosubject.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202002202205512_FFID.cs" />
+    <Compile Include="Migrations\202002202205512_FFID.Designer.cs">
+      <DependentUpon>202002202205512_FFID.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Gender.cs" />
@@ -394,6 +398,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202002201949476_Yeartosubject.resx">
       <DependentUpon>202002201949476_Yeartosubject.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202002202205512_FFID.resx">
+      <DependentUpon>202002202205512_FFID.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

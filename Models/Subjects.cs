@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Web;
 
@@ -15,9 +16,11 @@ namespace SchoolPortal.Models
         
         public StudentsSubjects StudentsSubjects { get; set;}
 
-     
+        public int YearId { get; set; }
+       
+       
 
-        public Year Year { get; set; }
+
 
     }
 }

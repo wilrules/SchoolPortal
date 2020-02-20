@@ -32,14 +32,11 @@
     </div>
 
     <div>
-        @Html.LabelFor(m => m.Subjects.Year.YearName)
-        @Html.DropDownListFor(m => m.Subjects.Year.YearName, new SelectList(Model.Years, "YearId", "YearName"), "", new { @class = "form-control" })
+        @Html.LabelFor(m => m.Subjects.YearId)
+        @Html.DropDownListFor(m => m.Subjects.YearId, new SelectList(Model.Years, "YearId", "YearName"), "", new { @class = "form-control" })
     </div>
 
-    <div>
-        @Html.LabelFor(m => m.Subjects.Year.YearId)
-        @Html.DropDownListFor(m => m.Subjects.Year.YearId, new SelectList(Model.Years, "YearId", "YearId"), "", new { @class = "form-control" })
-    </div>
+  
 
 
     <div class="form-group">

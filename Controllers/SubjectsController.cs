@@ -15,12 +15,12 @@ namespace SchoolPortal.Controllers
     {
         private ApplicationDbContext db = new ApplicationDbContext();
 
-        // GET: Subjects
+        //// GET: Subjects
         public ActionResult Index()
         {
-            var subjects = db.Subjects.Include(t => t.Year);
+            var subjects = db.Subjects;
             return View(subjects.ToList());
-            
+
         }
 
         // GET: Subjects/Details/5

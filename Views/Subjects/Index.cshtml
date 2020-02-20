@@ -17,9 +17,7 @@
         <th>
             @Html.DisplayNameFor(model => model.PassMark)
         </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Year.YearName)
-        </th>
+        
     </tr>
 
 @foreach (var item in Model) {
@@ -31,11 +29,9 @@
         @Html.DisplayFor(modelItem => item.PassMark)
     </td>
     <td>
-        @Html.DisplayFor(modelItem => item.Year.YearName)
+        Primary -@Html.DisplayFor(modelItem => item.YearId)
     </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.Year.YearNumber)
-    </td>
+   
     <td>
         @Html.ActionLink("Edit", "Edit", new { id = item.SubjectsId }) |
         @Html.ActionLink("Details", "Details", new { id = item.SubjectsId }) |
