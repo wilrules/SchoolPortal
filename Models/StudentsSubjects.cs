@@ -5,13 +5,13 @@ using System.Web;
 
 namespace SchoolPortal.Models
 {
-    public class Subject
+    public class StudentsSubjects
     {
         public int Id { get; set; }
 
         public string Name  { get; set; }
 
-        public int? PassMark { get; set;}
+        public int? Scores { get; set;}
 
         public int StudentId { get; set; }
 

@@ -33,7 +33,7 @@ namespace SchoolPortal.Models
 
 
         //Rels
-        public ICollection<Subject> Subjects { get; set; }
+        public ICollection<StudentsSubjects> Subjects { get; set; }
 
      
         public int YearId { get; set; }

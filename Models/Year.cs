@@ -16,7 +16,7 @@ namespace SchoolPortal.Models
 
         public virtual ICollection<Student> Students { get; set; }
 
-        public virtual ICollection<Subject> Subjects { get; set; }
+        public virtual ICollection<StudentsSubjects> StudentSubjects { get; set; }
 
 
     }

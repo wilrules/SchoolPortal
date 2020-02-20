@@ -27,7 +27,9 @@ namespace SchoolPortal.Models
 
         public DbSet <StudentAddress> StudentAddress { get; set; }
       
-        public DbSet<Subject> Subjects { get; set; }
+        public DbSet<StudentsSubjects> StudentsSubjects { get; set; }
+
+        public DbSet<Subjects> Subjects { get; set; }
 
         public DbSet<Year> Years { get; set; }
 
