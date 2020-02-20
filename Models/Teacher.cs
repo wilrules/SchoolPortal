@@ -13,8 +13,6 @@ namespace SchoolPortal.Models
         [Display(Name = "Class")]
         public int TeacherId { get; set; }
 
-       
-
         [Display(Name ="Title")]
         public string Title { get; set; }
 

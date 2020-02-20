@@ -7,13 +7,13 @@ namespace SchoolPortal.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.2.0-61023")]
-    public sealed partial class GENERIC1 : IMigrationMetadata
+    public sealed partial class Generic : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(GENERIC1));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(Generic));
         
         string IMigrationMetadata.Id
         {
-            get { return "202002161436101_GENERIC1"; }
+            get { return "202002201404493_Generic"; }
         }
         
         string IMigrationMetadata.Source

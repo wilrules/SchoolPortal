@@ -3,7 +3,7 @@ namespace SchoolPortal.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class Fire : DbMigration
+    public partial class Initial : DbMigration
     {
         public override void Up()
         {
@@ -63,11 +63,13 @@ namespace SchoolPortal.Migrations
                         Lastname = c.String(nullable: false, maxLength: 12),
                         DateOfBirth = c.DateTime(nullable: false),
                         EmailAddress = c.String(),
-                        YearId = c.Byte(nullable: false),
+                        YearId = c.Int(nullable: false),
                         GenderId = c.Byte(nullable: false),
                     })
                 .PrimaryKey(t => t.Id)
                 .ForeignKey("dbo.Genders", t => t.GenderId, cascadeDelete: true)
+                .ForeignKey("dbo.Years", t => t.YearId, cascadeDelete: true)
+                .Index(t => t.YearId)
                 .Index(t => t.GenderId);
             
             CreateTable(
@@ -91,6 +93,20 @@ namespace SchoolPortal.Migrations
                         YearName = c.String(),
                     })
                 .PrimaryKey(t => t.YearId);
+            
+            CreateTable(
+                "dbo.Teachers",
+                c => new
+                    {
+                        TeacherId = c.Int(nullable: false),
+                        Title = c.String(),
+                        FirstName = c.String(),
+                        LastName = c.String(),
+                        YearId = c.Int(nullable: false),
+                    })
+                .PrimaryKey(t => t.TeacherId)
+                .ForeignKey("dbo.Years", t => t.TeacherId)
+                .Index(t => t.TeacherId);
             
             CreateTable(
                 "dbo.AspNetUsers",
@@ -137,19 +153,6 @@ namespace SchoolPortal.Migrations
                 .ForeignKey("dbo.AspNetUsers", t => t.UserId, cascadeDelete: true)
                 .Index(t => t.UserId);
             
-            CreateTable(
-                "dbo.YearStudents",
-                c => new
-                    {
-                        Year_YearId = c.Int(nullable: false),
-                        Student_Id = c.Int(nullable: false),
-                    })
-                .PrimaryKey(t => new { t.Year_YearId, t.Student_Id })
-                .ForeignKey("dbo.Years", t => t.Year_YearId, cascadeDelete: true)
-                .ForeignKey("dbo.Students", t => t.Student_Id, cascadeDelete: true)
-                .Index(t => t.Year_YearId)
-                .Index(t => t.Student_Id);
-            
         }
         
         public override void Down()
@@ -158,26 +161,26 @@ namespace SchoolPortal.Migrations
             DropForeignKey("dbo.AspNetUserLogins", "UserId", "dbo.AspNetUsers");
             DropForeignKey("dbo.AspNetUserClaims", "UserId", "dbo.AspNetUsers");
             DropForeignKey("dbo.StudentAddresses", "StudentAddressId", "dbo.Students");
-            DropForeignKey("dbo.YearStudents", "Student_Id", "dbo.Students");
-            DropForeignKey("dbo.YearStudents", "Year_YearId", "dbo.Years");
+            DropForeignKey("dbo.Students", "YearId", "dbo.Years");
+            DropForeignKey("dbo.Teachers", "TeacherId", "dbo.Years");
             DropForeignKey("dbo.Subjects", "Student_Id", "dbo.Students");
             DropForeignKey("dbo.Students", "GenderId", "dbo.Genders");
             DropForeignKey("dbo.AspNetUserRoles", "RoleId", "dbo.AspNetRoles");
-            DropIndex("dbo.YearStudents", new[] { "Student_Id" });
-            DropIndex("dbo.YearStudents", new[] { "Year_YearId" });
             DropIndex("dbo.AspNetUserLogins", new[] { "UserId" });
             DropIndex("dbo.AspNetUserClaims", new[] { "UserId" });
             DropIndex("dbo.AspNetUsers", "UserNameIndex");
+            DropIndex("dbo.Teachers", new[] { "TeacherId" });
             DropIndex("dbo.Subjects", new[] { "Student_Id" });
             DropIndex("dbo.Students", new[] { "GenderId" });
+            DropIndex("dbo.Students", new[] { "YearId" });
             DropIndex("dbo.StudentAddresses", new[] { "StudentAddressId" });
             DropIndex("dbo.AspNetUserRoles", new[] { "RoleId" });
             DropIndex("dbo.AspNetUserRoles", new[] { "UserId" });
             DropIndex("dbo.AspNetRoles", "RoleNameIndex");
-            DropTable("dbo.YearStudents");
             DropTable("dbo.AspNetUserLogins");
             DropTable("dbo.AspNetUserClaims");
             DropTable("dbo.AspNetUsers");
+            DropTable("dbo.Teachers");
             DropTable("dbo.Years");
             DropTable("dbo.Subjects");
             DropTable("dbo.Students");

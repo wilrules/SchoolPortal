@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace SchoolPortal.Models
 {
@@ -13,6 +14,10 @@ namespace SchoolPortal.Models
 
         public Teacher Teacher { get; set; }
 
-       
+        public virtual ICollection<Student> Students { get; set; }
+
+        public virtual ICollection<Subject> Subjects { get; set; }
+
+
     }
 }

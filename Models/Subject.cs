@@ -9,6 +9,18 @@ namespace SchoolPortal.Models
     {
         public int Id { get; set; }
 
-        public string  Name  { get; set; }
+        public string Name  { get; set; }
+
+        public int? PassMark { get; set;}
+
+        public int StudentId { get; set; }
+
+        public Student Student { get; set; }
+
+        public int YearId { get; set; }
+
+        public Year Year { get; set; }
+
+
     }
 }

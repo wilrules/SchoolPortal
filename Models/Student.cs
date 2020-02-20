@@ -17,12 +17,10 @@ namespace SchoolPortal.Models
         [Display(Name = "Middle Name")]
         public string MiddleName { get; set; }
 
+        [Required]
         [Display(Name = "Last Name")]
         [StringLength(12)]
-        [Required]
         public string Lastname { get; set; }
-
-      
 
         [Required]
         [Display(Name = "Date Of Birth")]
@@ -34,18 +32,16 @@ namespace SchoolPortal.Models
         public string EmailAddress { get; set; }
 
 
-        public IList<Subject> Subject { get; set; }
-
-
-
         //Rels
+        public ICollection<Subject> Subjects { get; set; }
+
+     
         public int YearId { get; set; }
 
         [Display(Name = "Class")]
         public Year Year { get; set; }
 
-
-        // Rels
+     
         [Display(Name = "Gender")]
         public byte GenderId { get; set; }
 

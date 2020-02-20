@@ -171,46 +171,31 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\StudentController.cs" />
+    <Compile Include="Controllers\SubjectsController.cs" />
     <Compile Include="Controllers\TeachersController.cs" />
     <Compile Include="Controllers\YearsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202002161433090_Fire.cs" />
-    <Compile Include="Migrations\202002161433090_Fire.Designer.cs">
-      <DependentUpon>202002161433090_Fire.cs</DependentUpon>
+    <Compile Include="Migrations\202002201355077_Initial.cs" />
+    <Compile Include="Migrations\202002201355077_Initial.Designer.cs">
+      <DependentUpon>202002201355077_Initial.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202002161434275_GENERIC.cs" />
-    <Compile Include="Migrations\202002161434275_GENERIC.Designer.cs">
-      <DependentUpon>202002161434275_GENERIC.cs</DependentUpon>
+    <Compile Include="Migrations\202002201404493_Generic.cs" />
+    <Compile Include="Migrations\202002201404493_Generic.Designer.cs">
+      <DependentUpon>202002201404493_Generic.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202002161436101_GENERIC1.cs" />
-    <Compile Include="Migrations\202002161436101_GENERIC1.Designer.cs">
-      <DependentUpon>202002161436101_GENERIC1.cs</DependentUpon>
+    <Compile Include="Migrations\202002201449266_IcollectionStudentsinClass.cs" />
+    <Compile Include="Migrations\202002201449266_IcollectionStudentsinClass.Designer.cs">
+      <DependentUpon>202002201449266_IcollectionStudentsinClass.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202002161447164_Teacher.cs" />
-    <Compile Include="Migrations\202002161447164_Teacher.Designer.cs">
-      <DependentUpon>202002161447164_Teacher.cs</DependentUpon>
+    <Compile Include="Migrations\202002201456489_IcollectionSubjectsinStudent.cs" />
+    <Compile Include="Migrations\202002201456489_IcollectionSubjectsinStudent.Designer.cs">
+      <DependentUpon>202002201456489_IcollectionSubjectsinStudent.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202002170746387_0746.cs" />
-    <Compile Include="Migrations\202002170746387_0746.Designer.cs">
-      <DependentUpon>202002170746387_0746.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202002172129199_MU.cs" />
-    <Compile Include="Migrations\202002172129199_MU.Designer.cs">
-      <DependentUpon>202002172129199_MU.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202002180423139_ForeignRemoved.cs" />
-    <Compile Include="Migrations\202002180423139_ForeignRemoved.Designer.cs">
-      <DependentUpon>202002180423139_ForeignRemoved.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202002180510211_Stu1.cs" />
-    <Compile Include="Migrations\202002180510211_Stu1.Designer.cs">
-      <DependentUpon>202002180510211_Stu1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202002180533328_Stu2.cs" />
-    <Compile Include="Migrations\202002180533328_Stu2.Designer.cs">
-      <DependentUpon>202002180533328_Stu2.cs</DependentUpon>
+    <Compile Include="Migrations\202002201521284_Icollectionsofsubjectsinyears.cs" />
+    <Compile Include="Migrations\202002201521284_Icollectionsofsubjectsinyears.Designer.cs">
+      <DependentUpon>202002201521284_Icollectionsofsubjectsinyears.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -341,6 +326,11 @@
     <Content Include="Views\Years\Details.cshtml" />
     <Content Include="Views\Years\Edit.cshtml" />
     <Content Include="Views\Years\Index.cshtml" />
+    <Content Include="Views\Subjects\Create.cshtml" />
+    <Content Include="Views\Subjects\Delete.cshtml" />
+    <Content Include="Views\Subjects\Details.cshtml" />
+    <Content Include="Views\Subjects\Edit.cshtml" />
+    <Content Include="Views\Subjects\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -359,32 +349,20 @@
     <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202002161433090_Fire.resx">
-      <DependentUpon>202002161433090_Fire.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202002201355077_Initial.resx">
+      <DependentUpon>202002201355077_Initial.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202002161434275_GENERIC.resx">
-      <DependentUpon>202002161434275_GENERIC.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202002201404493_Generic.resx">
+      <DependentUpon>202002201404493_Generic.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202002161436101_GENERIC1.resx">
-      <DependentUpon>202002161436101_GENERIC1.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202002201449266_IcollectionStudentsinClass.resx">
+      <DependentUpon>202002201449266_IcollectionStudentsinClass.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202002161447164_Teacher.resx">
-      <DependentUpon>202002161447164_Teacher.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202002201456489_IcollectionSubjectsinStudent.resx">
+      <DependentUpon>202002201456489_IcollectionSubjectsinStudent.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202002170746387_0746.resx">
-      <DependentUpon>202002170746387_0746.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202002172129199_MU.resx">
-      <DependentUpon>202002172129199_MU.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202002180423139_ForeignRemoved.resx">
-      <DependentUpon>202002180423139_ForeignRemoved.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202002180510211_Stu1.resx">
-      <DependentUpon>202002180510211_Stu1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202002180533328_Stu2.resx">
-      <DependentUpon>202002180533328_Stu2.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202002201521284_Icollectionsofsubjectsinyears.resx">
+      <DependentUpon>202002201521284_Icollectionsofsubjectsinyears.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

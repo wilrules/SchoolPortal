@@ -3,7 +3,7 @@ namespace SchoolPortal.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class _0746 : DbMigration
+    public partial class IcollectionStudentsinClass : DbMigration
     {
         public override void Up()
         {
