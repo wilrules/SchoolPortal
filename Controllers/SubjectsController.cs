@@ -59,7 +59,7 @@ namespace SchoolPortal.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "SubjectsId,SubjectName,PassMark")] Subjects subjects)
+        public ActionResult Create([Bind(Include = "SubjectsId,SubjectName,PassMark,YearId")] Subjects subjects)
         {
             if (ModelState.IsValid)
             {
