@@ -178,25 +178,89 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202002222229326_Reset.cs" />
-    <Compile Include="Migrations\202002222229326_Reset.Designer.cs">
-      <DependentUpon>202002222229326_Reset.cs</DependentUpon>
+    <Compile Include="Migrations\202002231733535_Initial.cs" />
+    <Compile Include="Migrations\202002231733535_Initial.Designer.cs">
+      <DependentUpon>202002231733535_Initial.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202002222231424_Generic.cs" />
-    <Compile Include="Migrations\202002222231424_Generic.Designer.cs">
-      <DependentUpon>202002222231424_Generic.cs</DependentUpon>
+    <Compile Include="Migrations\202002231830445_YearRels.cs" />
+    <Compile Include="Migrations\202002231830445_YearRels.Designer.cs">
+      <DependentUpon>202002231830445_YearRels.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202002231153502_SortingoutValidations.cs" />
-    <Compile Include="Migrations\202002231153502_SortingoutValidations.Designer.cs">
-      <DependentUpon>202002231153502_SortingoutValidations.cs</DependentUpon>
+    <Compile Include="Migrations\202002231837598_TeacherRels.cs" />
+    <Compile Include="Migrations\202002231837598_TeacherRels.Designer.cs">
+      <DependentUpon>202002231837598_TeacherRels.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202002231316329_Enrolmentdayadded.cs" />
-    <Compile Include="Migrations\202002231316329_Enrolmentdayadded.Designer.cs">
-      <DependentUpon>202002231316329_Enrolmentdayadded.cs</DependentUpon>
+    <Compile Include="Migrations\202002231842266_TestFix.cs" />
+    <Compile Include="Migrations\202002231842266_TestFix.Designer.cs">
+      <DependentUpon>202002231842266_TestFix.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202002231340247_Validations1.cs" />
-    <Compile Include="Migrations\202002231340247_Validations1.Designer.cs">
-      <DependentUpon>202002231340247_Validations1.cs</DependentUpon>
+    <Compile Include="Migrations\202002231847116_StudentsSubjects.cs" />
+    <Compile Include="Migrations\202002231847116_StudentsSubjects.Designer.cs">
+      <DependentUpon>202002231847116_StudentsSubjects.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202002231848288_Test777.cs" />
+    <Compile Include="Migrations\202002231848288_Test777.Designer.cs">
+      <DependentUpon>202002231848288_Test777.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202002231849401_Test888.cs" />
+    <Compile Include="Migrations\202002231849401_Test888.Designer.cs">
+      <DependentUpon>202002231849401_Test888.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202002231902397_YearTest.cs" />
+    <Compile Include="Migrations\202002231902397_YearTest.Designer.cs">
+      <DependentUpon>202002231902397_YearTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202002231904447_Test999.cs" />
+    <Compile Include="Migrations\202002231904447_Test999.Designer.cs">
+      <DependentUpon>202002231904447_Test999.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202002231912105_FinalRels.cs" />
+    <Compile Include="Migrations\202002231912105_FinalRels.Designer.cs">
+      <DependentUpon>202002231912105_FinalRels.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202002231912571_Generic.cs" />
+    <Compile Include="Migrations\202002231912571_Generic.Designer.cs">
+      <DependentUpon>202002231912571_Generic.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202002231917046_Generic1.cs" />
+    <Compile Include="Migrations\202002231917046_Generic1.Designer.cs">
+      <DependentUpon>202002231917046_Generic1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202002231919491_Generic3.cs" />
+    <Compile Include="Migrations\202002231919491_Generic3.Designer.cs">
+      <DependentUpon>202002231919491_Generic3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202002231957581_GenderGender.cs" />
+    <Compile Include="Migrations\202002231957581_GenderGender.Designer.cs">
+      <DependentUpon>202002231957581_GenderGender.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202002232105288_Entity.cs" />
+    <Compile Include="Migrations\202002232105288_Entity.Designer.cs">
+      <DependentUpon>202002232105288_Entity.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202002232139546_dropdownissues.cs" />
+    <Compile Include="Migrations\202002232139546_dropdownissues.Designer.cs">
+      <DependentUpon>202002232139546_dropdownissues.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202002232146335_YY.cs" />
+    <Compile Include="Migrations\202002232146335_YY.Designer.cs">
+      <DependentUpon>202002232146335_YY.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202002232201578_YeartoTeacher.cs" />
+    <Compile Include="Migrations\202002232201578_YeartoTeacher.Designer.cs">
+      <DependentUpon>202002232201578_YeartoTeacher.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202002232206429_TitletoTeacher.cs" />
+    <Compile Include="Migrations\202002232206429_TitletoTeacher.Designer.cs">
+      <DependentUpon>202002232206429_TitletoTeacher.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202002232313545_teachergone.cs" />
+    <Compile Include="Migrations\202002232313545_teachergone.Designer.cs">
+      <DependentUpon>202002232313545_teachergone.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202002232316325_CK1.cs" />
+    <Compile Include="Migrations\202002232316325_CK1.Designer.cs">
+      <DependentUpon>202002232316325_CK1.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -208,12 +272,14 @@
     <Compile Include="Models\StudentsSubjects.cs" />
     <Compile Include="Models\Subjects.cs" />
     <Compile Include="Models\Teacher.cs" />
+    <Compile Include="Models\Title.cs" />
     <Compile Include="Models\Year.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
     <Compile Include="ViewModels\NewStudentSubjectsViewModel.cs" />
     <Compile Include="ViewModels\NewStudentViewModel.cs" />
     <Compile Include="ViewModels\NewSubjectViewModel.cs" />
+    <Compile Include="ViewModels\NewTeacherViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap-lumen.css" />
@@ -318,7 +384,6 @@
     <Content Include="Views\Student\Index.cshtml" />
     <Content Include="Views\Student\StudentForm.cshtml" />
     <Content Include="Views\Student\Details.cshtml" />
-    <Content Include="Views\Teachers\Create.cshtml" />
     <Content Include="Views\Teachers\Delete.cshtml" />
     <Content Include="Views\Teachers\Details.cshtml" />
     <Content Include="Views\Teachers\Edit.cshtml" />
@@ -338,6 +403,7 @@
     <Content Include="Views\StudentsSubjects\Details.cshtml" />
     <Content Include="Views\StudentsSubjects\Edit.cshtml" />
     <Content Include="Views\StudentsSubjects\Index.cshtml" />
+    <Content Include="Views\Teachers\Create.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -356,20 +422,68 @@
     <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202002222229326_Reset.resx">
-      <DependentUpon>202002222229326_Reset.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202002231733535_Initial.resx">
+      <DependentUpon>202002231733535_Initial.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202002222231424_Generic.resx">
-      <DependentUpon>202002222231424_Generic.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202002231830445_YearRels.resx">
+      <DependentUpon>202002231830445_YearRels.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202002231153502_SortingoutValidations.resx">
-      <DependentUpon>202002231153502_SortingoutValidations.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202002231837598_TeacherRels.resx">
+      <DependentUpon>202002231837598_TeacherRels.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202002231316329_Enrolmentdayadded.resx">
-      <DependentUpon>202002231316329_Enrolmentdayadded.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202002231842266_TestFix.resx">
+      <DependentUpon>202002231842266_TestFix.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202002231340247_Validations1.resx">
-      <DependentUpon>202002231340247_Validations1.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202002231847116_StudentsSubjects.resx">
+      <DependentUpon>202002231847116_StudentsSubjects.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202002231848288_Test777.resx">
+      <DependentUpon>202002231848288_Test777.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202002231849401_Test888.resx">
+      <DependentUpon>202002231849401_Test888.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202002231902397_YearTest.resx">
+      <DependentUpon>202002231902397_YearTest.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202002231904447_Test999.resx">
+      <DependentUpon>202002231904447_Test999.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202002231912105_FinalRels.resx">
+      <DependentUpon>202002231912105_FinalRels.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202002231912571_Generic.resx">
+      <DependentUpon>202002231912571_Generic.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202002231917046_Generic1.resx">
+      <DependentUpon>202002231917046_Generic1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202002231919491_Generic3.resx">
+      <DependentUpon>202002231919491_Generic3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202002231957581_GenderGender.resx">
+      <DependentUpon>202002231957581_GenderGender.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202002232105288_Entity.resx">
+      <DependentUpon>202002232105288_Entity.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202002232139546_dropdownissues.resx">
+      <DependentUpon>202002232139546_dropdownissues.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202002232146335_YY.resx">
+      <DependentUpon>202002232146335_YY.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202002232201578_YeartoTeacher.resx">
+      <DependentUpon>202002232201578_YeartoTeacher.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202002232206429_TitletoTeacher.resx">
+      <DependentUpon>202002232206429_TitletoTeacher.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202002232313545_teachergone.resx">
+      <DependentUpon>202002232313545_teachergone.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202002232316325_CK1.resx">
+      <DependentUpon>202002232316325_CK1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

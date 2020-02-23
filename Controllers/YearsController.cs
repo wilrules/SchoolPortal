@@ -18,12 +18,12 @@ namespace SchoolPortal.Controllers
 
 
 
-        // GET: Years
-        public ActionResult Index()
-        {
-            var years = db.Years.Include(y => y.Teacher);
-            return View(years.ToList());
-        }
+        //// GET: Years
+        //public ActionResult Index()
+        //{
+        //    var years = db.Years.Include(y => y.Teacher);
+        //    return View(years.ToList());
+        //}
 
         // GET: Years/Details/5
         public ActionResult Details(int? id)
@@ -43,7 +43,7 @@ namespace SchoolPortal.Controllers
         // GET: Years/Create
         public ActionResult Create()
         {
-            ViewBag.YearId = new SelectList(db.Teachers, "TeacherId", "Title");
+            //ViewBag.YearId = new SelectList(db.Teachers, "TeacherId", "Title");
             return View();
         }
 
@@ -61,7 +61,7 @@ namespace SchoolPortal.Controllers
                 return RedirectToAction("Index");
             }
 
-            ViewBag.YearId = new SelectList(db.Teachers, "TeacherId", "Title", year.YearId);
+            //ViewBag.YearId = new SelectList(db.Teachers, "TeacherId", "Title", year.YearId);
             return View(year);
         }
 
@@ -77,7 +77,7 @@ namespace SchoolPortal.Controllers
             {
                 return HttpNotFound();
             }
-            ViewBag.YearId = new SelectList(db.Teachers, "TeacherId", "Title", year.YearId);
+            //ViewBag.YearId = new SelectList(db.Teachers, "TeacherId", "Title", year.YearId);
             return View(year);
         }
 
@@ -94,7 +94,7 @@ namespace SchoolPortal.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.YearId = new SelectList(db.Teachers, "TeacherId", "Title", year.YearId);
+            //ViewBag.YearId = new SelectList(db.Teachers, "TeacherId", "Title", year.YearId);
             return View(year);
         }
 

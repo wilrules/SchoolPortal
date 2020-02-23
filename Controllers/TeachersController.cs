@@ -7,6 +7,7 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using SchoolPortal.Models;
+using SchoolPortal.ViewModels;
 
 namespace SchoolPortal.Controllers
 {
@@ -14,10 +15,10 @@ namespace SchoolPortal.Controllers
     {
         private ApplicationDbContext db = new ApplicationDbContext();
 
-        // GET: Teachers
+        //// GET: Teachers
         public ActionResult Index()
         {
-            var teachers = db.Teachers.Include(t => t.Year);
+            var teachers = db.Teachers.Include(y => y.Year).Include(t => t.Title);
             return View(teachers.ToList());
         }
 
@@ -39,26 +40,49 @@ namespace SchoolPortal.Controllers
         // GET: Teachers/Create
         public ActionResult Create()
         {
-            ViewBag.TeacherId = new SelectList(db.Years, "YearId", "YearName");
-            return View();
+            var titles = db.Titles.ToList();
+            var years = db.Years.ToList();
+
+            var viewmodel = new NewTeacherViewModel
+            {
+                Titles = titles,
+                Years = years
+            };
+
+            return View("Create", viewmodel);
+
         }
 
         // POST: Teachers/Create
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "TeacherId,Title,FirstName,LastName")] Teacher teacher)
+        public ActionResult Create(Teacher teacher)
         {
-            if (ModelState.IsValid)
+            if (!ModelState.IsValid)
             {
-                db.Teachers.Add(teacher);
-                db.SaveChanges();
-                return RedirectToAction("Index");
-            }
+                var viewmodel = new NewTeacherViewModel
+                {
+                    Teacher = teacher,
+                    Titles = db.Titles.ToList(),
+                    Years = db.Years.ToList()
 
-            ViewBag.TeacherId = new SelectList(db.Years, "YearId", "YearName", teacher.TeacherId);
-            return View(teacher);
+                };
+                return View("Create", viewmodel);
+
+            }
+            if (teacher.TeacherId == 0)
+                db.Teachers.Add(teacher);
+            db.SaveChanges();
+            return RedirectToAction("Index");
+
+
+
+
+
+
+
+
+
         }
 
         // GET: Teachers/Edit/5

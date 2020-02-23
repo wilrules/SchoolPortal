@@ -3,16 +3,16 @@ namespace SchoolPortal.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class Enrolmentdayadded : DbMigration
+    public partial class Generic1 : DbMigration
     {
         public override void Up()
         {
-            AddColumn("dbo.Students", "EnrolmentDate", c => c.DateTime(nullable: false));
+            Sql("INSERT INTO Genders (GenderId,Name) VALUES ('1','MALE')");
+            Sql("INSERT INTO Genders (GenderId,Name) VALUES ('2','FEMALE')");
         }
         
         public override void Down()
         {
-            DropColumn("dbo.Students", "EnrolmentDate");
         }
     }
 }

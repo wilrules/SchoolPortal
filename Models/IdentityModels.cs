@@ -21,6 +21,8 @@ namespace SchoolPortal.Models
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
 
+        public DbSet<Title> Titles { get; set; }    
+
         public DbSet<Gender> Genders { get; set; }
 
         public DbSet <Student> Students { get; set; }

@@ -7,13 +7,13 @@ namespace SchoolPortal.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.2.0-61023")]
-    public sealed partial class SortingoutValidations : IMigrationMetadata
+    public sealed partial class YearTest : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(SortingoutValidations));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(YearTest));
         
         string IMigrationMetadata.Id
         {
-            get { return "202002231153502_SortingoutValidations"; }
+            get { return "202002231902397_YearTest"; }
         }
         
         string IMigrationMetadata.Source

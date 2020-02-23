@@ -53,14 +53,14 @@
 
 		<div>
 
-			@Html.LabelFor(m => m.Student.Gender)
+			@Html.LabelFor(m => m.Student.GenderId)
 			@Html.DropDownListFor(m => m.Student.GenderId, new SelectList(Model.Genders, "GenderId", "Name"), "", new { @class = "form-control" })
 			@Html.ValidationMessageFor(m => m.Student.GenderId)
 		</div>
 
 		<br />
 		<div>
-			@Html.LabelFor(m => m.Student.Year)
+			@Html.LabelFor(m => m.Student.YearId)
 			@Html.DropDownListFor(m => m.Student.YearId, new SelectList(Model.Years, "YearId", "YearName"), "", new { @class = "form-control" })
 			@Html.ValidationMessageFor(m => m.Student.YearId)
 		</div>

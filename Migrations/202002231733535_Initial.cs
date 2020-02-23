@@ -3,7 +3,7 @@ namespace SchoolPortal.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class Reset : DbMigration
+    public partial class Initial : DbMigration
     {
         public override void Up()
         {
@@ -11,47 +11,12 @@ namespace SchoolPortal.Migrations
                 "dbo.Genders",
                 c => new
                     {
-                        GenderId = c.Byte(nullable: false),
+                        GenderId = c.Int(nullable: false),
                         Name = c.String(),
                     })
-                .PrimaryKey(t => t.GenderId);
-            
-            CreateTable(
-                "dbo.AspNetRoles",
-                c => new
-                    {
-                        Id = c.String(nullable: false, maxLength: 128),
-                        Name = c.String(nullable: false, maxLength: 256),
-                    })
-                .PrimaryKey(t => t.Id)
-                .Index(t => t.Name, unique: true, name: "RoleNameIndex");
-            
-            CreateTable(
-                "dbo.AspNetUserRoles",
-                c => new
-                    {
-                        UserId = c.String(nullable: false, maxLength: 128),
-                        RoleId = c.String(nullable: false, maxLength: 128),
-                    })
-                .PrimaryKey(t => new { t.UserId, t.RoleId })
-                .ForeignKey("dbo.AspNetRoles", t => t.RoleId, cascadeDelete: true)
-                .ForeignKey("dbo.AspNetUsers", t => t.UserId, cascadeDelete: true)
-                .Index(t => t.UserId)
-                .Index(t => t.RoleId);
-            
-            CreateTable(
-                "dbo.StudentAddresses",
-                c => new
-                    {
-                        StudentAddressId = c.Int(nullable: false),
-                        Address1 = c.String(),
-                        Address2 = c.String(),
-                        City = c.String(),
-                        State = c.String(),
-                    })
-                .PrimaryKey(t => t.StudentAddressId)
-                .ForeignKey("dbo.Students", t => t.StudentAddressId)
-                .Index(t => t.StudentAddressId);
+                .PrimaryKey(t => t.GenderId)
+                .ForeignKey("dbo.Students", t => t.GenderId)
+                .Index(t => t.GenderId);
             
             CreateTable(
                 "dbo.Students",
@@ -59,18 +24,30 @@ namespace SchoolPortal.Migrations
                     {
                         Id = c.Int(nullable: false, identity: true),
                         FirstName = c.String(nullable: false, maxLength: 12),
-                        MiddleName = c.String(),
+                        MiddleName = c.String(maxLength: 12),
                         Lastname = c.String(nullable: false, maxLength: 12),
                         DateOfBirth = c.DateTime(nullable: false),
-                        EmailAddress = c.String(),
-                        YearId = c.Int(nullable: false),
-                        GenderId = c.Byte(nullable: false),
+                        EnrolmentDate = c.DateTime(nullable: false),
+                        Year_YearId = c.Int(),
                     })
                 .PrimaryKey(t => t.Id)
-                .ForeignKey("dbo.Genders", t => t.GenderId, cascadeDelete: true)
-                .ForeignKey("dbo.Years", t => t.YearId, cascadeDelete: true)
-                .Index(t => t.YearId)
-                .Index(t => t.GenderId);
+                .ForeignKey("dbo.Years", t => t.Year_YearId)
+                .Index(t => t.Year_YearId);
+            
+            CreateTable(
+                "dbo.StudentAddresses",
+                c => new
+                    {
+                        StudentAddressId = c.Int(nullable: false),
+                        Address1 = c.String(nullable: false),
+                        Address2 = c.String(nullable: false),
+                        Address3 = c.String(nullable: false),
+                        City = c.String(nullable: false),
+                        State = c.String(),
+                    })
+                .PrimaryKey(t => t.StudentAddressId)
+                .ForeignKey("dbo.Students", t => t.StudentAddressId)
+                .Index(t => t.StudentAddressId);
             
             CreateTable(
                 "dbo.StudentsSubjects",
@@ -106,25 +83,58 @@ namespace SchoolPortal.Migrations
                 "dbo.Years",
                 c => new
                     {
-                        YearId = c.Int(nullable: false, identity: true),
+                        YearId = c.Int(nullable: false),
                         YearNumber = c.Int(nullable: false),
                         YearName = c.String(),
                     })
-                .PrimaryKey(t => t.YearId);
+                .PrimaryKey(t => t.YearId)
+                .ForeignKey("dbo.Teachers", t => t.YearId)
+                .Index(t => t.YearId);
             
             CreateTable(
                 "dbo.Teachers",
                 c => new
                     {
-                        TeacherId = c.Int(nullable: false),
-                        Title = c.String(),
+                        TeacherId = c.Int(nullable: false, identity: true),
                         FirstName = c.String(),
                         LastName = c.String(),
-                        YearId = c.Int(nullable: false),
+                        EmailAddress = c.String(nullable: false),
                     })
-                .PrimaryKey(t => t.TeacherId)
-                .ForeignKey("dbo.Years", t => t.TeacherId)
-                .Index(t => t.TeacherId);
+                .PrimaryKey(t => t.TeacherId);
+            
+            CreateTable(
+                "dbo.Titles",
+                c => new
+                    {
+                        TitleId = c.Int(nullable: false),
+                        TitleName = c.String(),
+                    })
+                .PrimaryKey(t => t.TitleId)
+                .ForeignKey("dbo.Teachers", t => t.TitleId)
+                .Index(t => t.TitleId);
+            
+            CreateTable(
+                "dbo.AspNetRoles",
+                c => new
+                    {
+                        Id = c.String(nullable: false, maxLength: 128),
+                        Name = c.String(nullable: false, maxLength: 256),
+                    })
+                .PrimaryKey(t => t.Id)
+                .Index(t => t.Name, unique: true, name: "RoleNameIndex");
+            
+            CreateTable(
+                "dbo.AspNetUserRoles",
+                c => new
+                    {
+                        UserId = c.String(nullable: false, maxLength: 128),
+                        RoleId = c.String(nullable: false, maxLength: 128),
+                    })
+                .PrimaryKey(t => new { t.UserId, t.RoleId })
+                .ForeignKey("dbo.AspNetRoles", t => t.RoleId, cascadeDelete: true)
+                .ForeignKey("dbo.AspNetUsers", t => t.UserId, cascadeDelete: true)
+                .Index(t => t.UserId)
+                .Index(t => t.RoleId);
             
             CreateTable(
                 "dbo.AspNetUsers",
@@ -178,38 +188,41 @@ namespace SchoolPortal.Migrations
             DropForeignKey("dbo.AspNetUserRoles", "UserId", "dbo.AspNetUsers");
             DropForeignKey("dbo.AspNetUserLogins", "UserId", "dbo.AspNetUsers");
             DropForeignKey("dbo.AspNetUserClaims", "UserId", "dbo.AspNetUsers");
-            DropForeignKey("dbo.StudentAddresses", "StudentAddressId", "dbo.Students");
-            DropForeignKey("dbo.Teachers", "TeacherId", "dbo.Years");
+            DropForeignKey("dbo.AspNetUserRoles", "RoleId", "dbo.AspNetRoles");
+            DropForeignKey("dbo.Genders", "GenderId", "dbo.Students");
+            DropForeignKey("dbo.Years", "YearId", "dbo.Teachers");
+            DropForeignKey("dbo.Titles", "TitleId", "dbo.Teachers");
             DropForeignKey("dbo.StudentsSubjects", "YearId", "dbo.Years");
-            DropForeignKey("dbo.Students", "YearId", "dbo.Years");
+            DropForeignKey("dbo.Students", "Year_YearId", "dbo.Years");
             DropForeignKey("dbo.StudentsSubjects", "SubjectsId", "dbo.Subjects");
             DropForeignKey("dbo.StudentsSubjects", "StudentId", "dbo.Students");
-            DropForeignKey("dbo.Students", "GenderId", "dbo.Genders");
-            DropForeignKey("dbo.AspNetUserRoles", "RoleId", "dbo.AspNetRoles");
+            DropForeignKey("dbo.StudentAddresses", "StudentAddressId", "dbo.Students");
             DropIndex("dbo.AspNetUserLogins", new[] { "UserId" });
             DropIndex("dbo.AspNetUserClaims", new[] { "UserId" });
             DropIndex("dbo.AspNetUsers", "UserNameIndex");
-            DropIndex("dbo.Teachers", new[] { "TeacherId" });
-            DropIndex("dbo.StudentsSubjects", new[] { "SubjectsId" });
-            DropIndex("dbo.StudentsSubjects", new[] { "YearId" });
-            DropIndex("dbo.StudentsSubjects", new[] { "StudentId" });
-            DropIndex("dbo.Students", new[] { "GenderId" });
-            DropIndex("dbo.Students", new[] { "YearId" });
-            DropIndex("dbo.StudentAddresses", new[] { "StudentAddressId" });
             DropIndex("dbo.AspNetUserRoles", new[] { "RoleId" });
             DropIndex("dbo.AspNetUserRoles", new[] { "UserId" });
             DropIndex("dbo.AspNetRoles", "RoleNameIndex");
+            DropIndex("dbo.Titles", new[] { "TitleId" });
+            DropIndex("dbo.Years", new[] { "YearId" });
+            DropIndex("dbo.StudentsSubjects", new[] { "SubjectsId" });
+            DropIndex("dbo.StudentsSubjects", new[] { "YearId" });
+            DropIndex("dbo.StudentsSubjects", new[] { "StudentId" });
+            DropIndex("dbo.StudentAddresses", new[] { "StudentAddressId" });
+            DropIndex("dbo.Students", new[] { "Year_YearId" });
+            DropIndex("dbo.Genders", new[] { "GenderId" });
             DropTable("dbo.AspNetUserLogins");
             DropTable("dbo.AspNetUserClaims");
             DropTable("dbo.AspNetUsers");
+            DropTable("dbo.AspNetUserRoles");
+            DropTable("dbo.AspNetRoles");
+            DropTable("dbo.Titles");
             DropTable("dbo.Teachers");
             DropTable("dbo.Years");
             DropTable("dbo.Subjects");
             DropTable("dbo.StudentsSubjects");
-            DropTable("dbo.Students");
             DropTable("dbo.StudentAddresses");
-            DropTable("dbo.AspNetUserRoles");
-            DropTable("dbo.AspNetRoles");
+            DropTable("dbo.Students");
             DropTable("dbo.Genders");
         }
     }

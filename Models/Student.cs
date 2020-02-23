@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace SchoolPortal.Models
 {
@@ -39,19 +40,15 @@ namespace SchoolPortal.Models
 
 
         //Rels
-        public ICollection<StudentsSubjects> Subjects { get; set; }
+        public ICollection<StudentsSubjects> StudentsSubjects { get; set; }
 
+        [Required]
+        public virtual StudentAddress StudentAddress { get; set; }
 
         public int YearId { get; set; }
+        public virtual Year Year { get; set; }
 
-        [Display(Name = "Class")]
-        public Year Year { get; set; }
-
-     
-        [Display(Name = "Gender")]
-        public byte GenderId { get; set; }
-
-        [Display(Name = "Gender")]
+        public int GenderId { get; set; }
         public Gender Gender { get; set; }
 
 
@@ -61,8 +58,8 @@ namespace SchoolPortal.Models
 
 
 
-        [Required]
-        public virtual StudentAddress StudentAddress { get; set; }
+
+       
 
     }
 }

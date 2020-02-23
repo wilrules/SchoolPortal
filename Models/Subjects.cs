@@ -16,7 +16,7 @@ namespace SchoolPortal.Models
         
         public virtual ICollection<StudentsSubjects> StudentsSubjects { get; set;}
 
-        public int YearId { get; set; }
+      
 
         
 

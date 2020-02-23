@@ -33,10 +33,10 @@ namespace SchoolPortal.Controllers
 
 
 
-        // GET: Student
+        //// GET: Student
         public ActionResult Index()
         {
-            var students = _context.Students.Include(c => c.Gender).Include(y => y.Year).ToList();
+            var students = _context.Students.Include(y => y.Year).ToList();
             return View(students);
         }
 
@@ -83,17 +83,36 @@ namespace SchoolPortal.Controllers
                     Student = student,
                     Genders = _context.Genders.ToList(),
                     Years = _context.Years.ToList()
-                };
-                  return View("StudentForm", viewModel);
-            }
-            if (student.Id == 0)
 
-                _context.Students.Add(student);
-            _context.SaveChanges();
+               
+              
+                
+                };
+                return View("StudentForm", viewModel);
+            };
+
+            try
+            {
+                if (student.Id == 0)
+
+
+                    _context.Students.Add(student);
+                _context.SaveChanges();
+                
+
+            }
+           
+            catch (DbEntityValidationException e)
+            {
+
+                Console.WriteLine(e);
+            }
+
+
             return RedirectToAction("Index", "Student");
 
-
-        }      
+        }
+             
                      
      
 

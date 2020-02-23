@@ -1,10 +1,10 @@
-﻿@model SchoolPortal.Models.Teacher
+﻿@model SchoolPortal.ViewModels.NewTeacherViewModel
 
 @{
     ViewBag.Title = "Create";
 }
 
-<h2>Register New Teacher</h2>
+<h2>Create</h2>
 
 
 @using (Html.BeginForm()) 
@@ -12,59 +12,52 @@
     @Html.AntiForgeryToken()
     
 <div class="form-horizontal">
-    <h4></h4>
+    <h4>Teacher</h4>
     <hr />
+
+
     @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-    <div class="form-group">
-        @Html.LabelFor(model => model.TeacherId, "TeacherId", htmlAttributes: new { @class = "control-label col-md-2" })
-        <div class="col-md-10">
-            @Html.DropDownList("TeacherId", null, htmlAttributes: new { @class = "form-control" })
-            @Html.ValidationMessageFor(model => model.TeacherId, "", new { @class = "text-danger" })
-        </div>
-    </div>
 
     <div class="form-group">
-        @Html.LabelFor(model => model.Title, htmlAttributes: new { @class = "control-label col-md-2" })
-        <div class="col-md-10">
-            @Html.EditorFor(model => model.Title, new { htmlAttributes = new { @class = "form-control" } })
-            @Html.ValidationMessageFor(model => model.Title, "", new { @class = "text-danger" })
-        </div>
+        @Html.LabelFor(m => m.Teacher.TitleId)
+        @Html.DropDownListFor(m => m.Teacher.TitleId, new SelectList(Model.Titles, "TitleId", "TitleName"), "", new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Teacher.TitleId)
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.Teacher.FirstName)
+        @Html.TextBoxFor(m => m.Teacher.FirstName, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Teacher.FirstName)
+    </div>
+
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.Teacher.LastName)
+        @Html.TextBoxFor(m => m.Teacher.LastName, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Teacher.LastName)
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.Teacher.EmailAddress)
+        @Html.TextBoxFor(m => m.Teacher.EmailAddress, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Teacher.EmailAddress)
+    </div>
+
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.Teacher.YearId)
+        @Html.DropDownListFor(m => m.Teacher.YearId, new SelectList(Model.Years, "YearId", "YearName"), "", new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Teacher.YearId)
     </div>
 
 
 
-
-
-
-
-
-
-
-
-
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.FirstName, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.FirstName, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.FirstName, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.LastName, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.LastName, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.LastName, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Create" class="btn btn-default" />
-            </div>
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Create" class="btn btn-default" />
         </div>
     </div>
+</div>
 }
 
 <div>

@@ -16,10 +16,15 @@ namespace SchoolPortal.Models
         public string Address1 { get; set; }
         [Required]
         public string Address2 { get; set; }
-        [Required]
+
+        
+        public string Address3 { get; set; }
+
+      
         public string City { get; set; }
 
         public string State { get; set; }
+
         [Required]
         public virtual Student Student { get; set; }
     }
