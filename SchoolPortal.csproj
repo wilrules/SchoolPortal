@@ -186,6 +186,18 @@
     <Compile Include="Migrations\202002222231424_Generic.Designer.cs">
       <DependentUpon>202002222231424_Generic.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202002231153502_SortingoutValidations.cs" />
+    <Compile Include="Migrations\202002231153502_SortingoutValidations.Designer.cs">
+      <DependentUpon>202002231153502_SortingoutValidations.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202002231316329_Enrolmentdayadded.cs" />
+    <Compile Include="Migrations\202002231316329_Enrolmentdayadded.Designer.cs">
+      <DependentUpon>202002231316329_Enrolmentdayadded.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202002231340247_Validations1.cs" />
+    <Compile Include="Migrations\202002231340247_Validations1.Designer.cs">
+      <DependentUpon>202002231340247_Validations1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Gender.cs" />
@@ -349,6 +361,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202002222231424_Generic.resx">
       <DependentUpon>202002222231424_Generic.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202002231153502_SortingoutValidations.resx">
+      <DependentUpon>202002231153502_SortingoutValidations.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202002231316329_Enrolmentdayadded.resx">
+      <DependentUpon>202002231316329_Enrolmentdayadded.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202002231340247_Validations1.resx">
+      <DependentUpon>202002231340247_Validations1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

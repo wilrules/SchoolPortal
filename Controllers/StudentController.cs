@@ -76,13 +76,30 @@ namespace SchoolPortal.Controllers
         [HttpPost]
         public ActionResult Create(Student student)
         {
-            _context.Students.Add(student);
+            if (!ModelState.IsValid)
+            {
+                var viewModel = new StudentFormViewModel
+                {
+                    Student = student,
+                    Genders = _context.Genders.ToList(),
+                    Years = _context.Years.ToList()
+                };
+                  return View("StudentForm", viewModel);
+            }
+            if (student.Id == 0)
+
+                _context.Students.Add(student);
             _context.SaveChanges();
             return RedirectToAction("Index", "Student");
 
 
+        }      
+                     
+     
 
-        }
+
+
+        
 
 
         public ActionResult Edit(int? id)
