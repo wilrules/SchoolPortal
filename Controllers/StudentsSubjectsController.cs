@@ -14,112 +14,116 @@ namespace SchoolPortal.Controllers
     {
         private ApplicationDbContext db = new ApplicationDbContext();
 
-        // GET: Subjects
+        // GET: StudentsSubjects
         public ActionResult Index()
         {
-            var subjects = db.StudentsSubjects.Include(s => s.Student).Include(s => s.Year);
-            return View(subjects.ToList());
+            var studentsSubjects = db.StudentsSubjects.Include(s => s.Student).Include(s => s.Subjects).Include(s => s.Year);
+            return View(studentsSubjects.ToList());
         }
 
-        // GET: Subjects/Details/5
+        // GET: StudentsSubjects/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            StudentsSubjects subject = db.StudentsSubjects.Find(id);
-            if (subject == null)
+            StudentsSubjects studentsSubjects = db.StudentsSubjects.Find(id);
+            if (studentsSubjects == null)
             {
                 return HttpNotFound();
             }
-            return View(subject);
+            return View(studentsSubjects);
         }
 
-        // GET: Subjects/Create
+        // GET: StudentsSubjects/Create
         public ActionResult Create()
         {
             ViewBag.StudentId = new SelectList(db.Students, "Id", "FirstName");
+            ViewBag.SubjectsId = new SelectList(db.Subjects, "SubjectsId", "SubjectName");
             ViewBag.YearId = new SelectList(db.Years, "YearId", "YearName");
             return View();
         }
 
-        // POST: Subjects/Create
+        // POST: StudentsSubjects/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Name,PassMark,StudentId,YearId")] StudentsSubjects subject)
+        public ActionResult Create([Bind(Include = "Id,Name,Scores,StudentId,YearId,SubjectsId")] StudentsSubjects studentsSubjects)
         {
             if (ModelState.IsValid)
             {
-                db.StudentsSubjects.Add(subject);
+                db.StudentsSubjects.Add(studentsSubjects);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            ViewBag.StudentId = new SelectList(db.Students, "Id", "FirstName", subject.StudentId);
-            ViewBag.YearId = new SelectList(db.Years, "YearId", "YearName", subject.YearId);
-            return View(subject);
+            ViewBag.StudentId = new SelectList(db.Students, "Id", "FirstName", studentsSubjects.StudentId);
+            ViewBag.SubjectsId = new SelectList(db.Subjects, "SubjectsId", "SubjectName", studentsSubjects.SubjectsId);
+            ViewBag.YearId = new SelectList(db.Years, "YearId", "YearName", studentsSubjects.YearId);
+            return View(studentsSubjects);
         }
 
-        // GET: Subjects/Edit/5
+        // GET: StudentsSubjects/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            StudentsSubjects subject = db.StudentsSubjects.Find(id);
-            if (subject == null)
+            StudentsSubjects studentsSubjects = db.StudentsSubjects.Find(id);
+            if (studentsSubjects == null)
             {
                 return HttpNotFound();
             }
-            ViewBag.StudentId = new SelectList(db.Students, "Id", "FirstName", subject.StudentId);
-            ViewBag.YearId = new SelectList(db.Years, "YearId", "YearName", subject.YearId);
-            return View(subject);
+            ViewBag.StudentId = new SelectList(db.Students, "Id", "FirstName", studentsSubjects.StudentId);
+            ViewBag.SubjectsId = new SelectList(db.Subjects, "SubjectsId", "SubjectName", studentsSubjects.SubjectsId);
+            ViewBag.YearId = new SelectList(db.Years, "YearId", "YearName", studentsSubjects.YearId);
+            return View(studentsSubjects);
         }
 
-        // POST: Subjects/Edit/5
+        // POST: StudentsSubjects/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,Name,PassMark,StudentId,YearId")] StudentsSubjects subject)
+        public ActionResult Edit([Bind(Include = "Id,Name,Scores,StudentId,YearId,SubjectsId")] StudentsSubjects studentsSubjects)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(subject).State = EntityState.Modified;
+                db.Entry(studentsSubjects).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.StudentId = new SelectList(db.Students, "Id", "FirstName", subject.StudentId);
-            ViewBag.YearId = new SelectList(db.Years, "YearId", "YearName", subject.YearId);
-            return View(subject);
+            ViewBag.StudentId = new SelectList(db.Students, "Id", "FirstName", studentsSubjects.StudentId);
+            ViewBag.SubjectsId = new SelectList(db.Subjects, "SubjectsId", "SubjectName", studentsSubjects.SubjectsId);
+            ViewBag.YearId = new SelectList(db.Years, "YearId", "YearName", studentsSubjects.YearId);
+            return View(studentsSubjects);
         }
 
-        // GET: Subjects/Delete/5
+        // GET: StudentsSubjects/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            StudentsSubjects subject = db.StudentsSubjects.Find(id);
-            if (subject == null)
+            StudentsSubjects studentsSubjects = db.StudentsSubjects.Find(id);
+            if (studentsSubjects == null)
             {
                 return HttpNotFound();
             }
-            return View(subject);
+            return View(studentsSubjects);
         }
 
-        // POST: Subjects/Delete/5
+        // POST: StudentsSubjects/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            StudentsSubjects subject = db.StudentsSubjects.Find(id);
-            db.StudentsSubjects.Remove(subject);
+            StudentsSubjects studentsSubjects = db.StudentsSubjects.Find(id);
+            db.StudentsSubjects.Remove(studentsSubjects);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

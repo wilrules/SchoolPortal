@@ -3,7 +3,7 @@ namespace SchoolPortal.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class Initial : DbMigration
+    public partial class Reset : DbMigration
     {
         public override void Up()
         {
@@ -73,16 +73,34 @@ namespace SchoolPortal.Migrations
                 .Index(t => t.GenderId);
             
             CreateTable(
-                "dbo.Subjects",
+                "dbo.StudentsSubjects",
                 c => new
                     {
                         Id = c.Int(nullable: false, identity: true),
                         Name = c.String(),
-                        Student_Id = c.Int(),
+                        Scores = c.Int(),
+                        StudentId = c.Int(nullable: false),
+                        YearId = c.Int(nullable: false),
+                        SubjectsId = c.Int(nullable: false),
                     })
                 .PrimaryKey(t => t.Id)
-                .ForeignKey("dbo.Students", t => t.Student_Id)
-                .Index(t => t.Student_Id);
+                .ForeignKey("dbo.Students", t => t.StudentId, cascadeDelete: false)
+                .ForeignKey("dbo.Subjects", t => t.SubjectsId, cascadeDelete: false)
+                .ForeignKey("dbo.Years", t => t.YearId, cascadeDelete: false)
+                .Index(t => t.StudentId)
+                .Index(t => t.YearId)
+                .Index(t => t.SubjectsId);
+            
+            CreateTable(
+                "dbo.Subjects",
+                c => new
+                    {
+                        SubjectsId = c.Int(nullable: false, identity: true),
+                        SubjectName = c.String(),
+                        PassMark = c.Int(),
+                        YearId = c.Int(nullable: false),
+                    })
+                .PrimaryKey(t => t.SubjectsId);
             
             CreateTable(
                 "dbo.Years",
@@ -161,16 +179,20 @@ namespace SchoolPortal.Migrations
             DropForeignKey("dbo.AspNetUserLogins", "UserId", "dbo.AspNetUsers");
             DropForeignKey("dbo.AspNetUserClaims", "UserId", "dbo.AspNetUsers");
             DropForeignKey("dbo.StudentAddresses", "StudentAddressId", "dbo.Students");
-            DropForeignKey("dbo.Students", "YearId", "dbo.Years");
             DropForeignKey("dbo.Teachers", "TeacherId", "dbo.Years");
-            DropForeignKey("dbo.Subjects", "Student_Id", "dbo.Students");
+            DropForeignKey("dbo.StudentsSubjects", "YearId", "dbo.Years");
+            DropForeignKey("dbo.Students", "YearId", "dbo.Years");
+            DropForeignKey("dbo.StudentsSubjects", "SubjectsId", "dbo.Subjects");
+            DropForeignKey("dbo.StudentsSubjects", "StudentId", "dbo.Students");
             DropForeignKey("dbo.Students", "GenderId", "dbo.Genders");
             DropForeignKey("dbo.AspNetUserRoles", "RoleId", "dbo.AspNetRoles");
             DropIndex("dbo.AspNetUserLogins", new[] { "UserId" });
             DropIndex("dbo.AspNetUserClaims", new[] { "UserId" });
             DropIndex("dbo.AspNetUsers", "UserNameIndex");
             DropIndex("dbo.Teachers", new[] { "TeacherId" });
-            DropIndex("dbo.Subjects", new[] { "Student_Id" });
+            DropIndex("dbo.StudentsSubjects", new[] { "SubjectsId" });
+            DropIndex("dbo.StudentsSubjects", new[] { "YearId" });
+            DropIndex("dbo.StudentsSubjects", new[] { "StudentId" });
             DropIndex("dbo.Students", new[] { "GenderId" });
             DropIndex("dbo.Students", new[] { "YearId" });
             DropIndex("dbo.StudentAddresses", new[] { "StudentAddressId" });
@@ -183,6 +205,7 @@ namespace SchoolPortal.Migrations
             DropTable("dbo.Teachers");
             DropTable("dbo.Years");
             DropTable("dbo.Subjects");
+            DropTable("dbo.StudentsSubjects");
             DropTable("dbo.Students");
             DropTable("dbo.StudentAddresses");
             DropTable("dbo.AspNetUserRoles");

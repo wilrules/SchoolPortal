@@ -1,37 +1,28 @@
 ﻿@model SchoolPortal.Models.Student
 
-
 @{
 	ViewBag.Title = "Details";
 	Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-
-	
-
-
-
-
-
-
-
 <h3>@Model.FirstName @Model.MiddleName @Model.Lastname</h3>
-<ul>
-	<li>@Model.EmailAddress</li>
+<p>
+	<div><b>Email address :</b> @Model.EmailAddress</div>
 
-	<li>@Model.Year</li>
+	<div><b>Class :</b> Primary @Model.YearId</div>
 
+	<div><b>Date of birth :</b> @Model.DateOfBirth.Value.ToShortDateString()</div>
 
-	<li>@Model.DateOfBirth.Value.ToShortDateString()</li>
-	@*<li>@(DateTime.Today.Subtract(@Model.DateOfBirth.Value).Days.ToString())</li>*@
 	@{
 		var date = DateTime.Now.Subtract(@Model.DateOfBirth.Value).Days.ToString();
 		var age = @Convert.ToInt32(date) / 365;
 	}
-	<li>@age</li>
+	<div><b>Age :</b>  @age</div>
 
-	<li>@Model.StudentAddress.Address1</li>
-	<li>@Model.StudentAddress.Address2</li>
-	<li>@Model.StudentAddress.City</li>
-	<li>@Model.StudentAddress.State</li>
-</ul>
+	<div><b>Home Address :</b> @Model.StudentAddress.Address1 @Model.StudentAddress.Address2</div>
+
+	<div><b>City :</b> @Model.StudentAddress.City</div>
+	<div><b>State :</b> @Model.StudentAddress.State</div>
+	<div><b>Religion :</b></div>
+	<div><b>Tribe :</b></div>
+</p>

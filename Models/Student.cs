@@ -35,7 +35,7 @@ namespace SchoolPortal.Models
         //Rels
         public ICollection<StudentsSubjects> Subjects { get; set; }
 
-     
+
         public int YearId { get; set; }
 
         [Display(Name = "Class")]

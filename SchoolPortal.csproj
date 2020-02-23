@@ -178,45 +178,13 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202002201355077_Initial.cs" />
-    <Compile Include="Migrations\202002201355077_Initial.Designer.cs">
-      <DependentUpon>202002201355077_Initial.cs</DependentUpon>
+    <Compile Include="Migrations\202002222229326_Reset.cs" />
+    <Compile Include="Migrations\202002222229326_Reset.Designer.cs">
+      <DependentUpon>202002222229326_Reset.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202002201404493_Generic.cs" />
-    <Compile Include="Migrations\202002201404493_Generic.Designer.cs">
-      <DependentUpon>202002201404493_Generic.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202002201449266_IcollectionStudentsinClass.cs" />
-    <Compile Include="Migrations\202002201449266_IcollectionStudentsinClass.Designer.cs">
-      <DependentUpon>202002201449266_IcollectionStudentsinClass.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202002201456489_IcollectionSubjectsinStudent.cs" />
-    <Compile Include="Migrations\202002201456489_IcollectionSubjectsinStudent.Designer.cs">
-      <DependentUpon>202002201456489_IcollectionSubjectsinStudent.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202002201521284_Icollectionsofsubjectsinyears.cs" />
-    <Compile Include="Migrations\202002201521284_Icollectionsofsubjectsinyears.Designer.cs">
-      <DependentUpon>202002201521284_Icollectionsofsubjectsinyears.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202002201855242_SubjectRenamed.cs" />
-    <Compile Include="Migrations\202002201855242_SubjectRenamed.Designer.cs">
-      <DependentUpon>202002201855242_SubjectRenamed.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202002201913054_SubjectAdded.cs" />
-    <Compile Include="Migrations\202002201913054_SubjectAdded.Designer.cs">
-      <DependentUpon>202002201913054_SubjectAdded.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202002201926231_TestSubjectAdded.cs" />
-    <Compile Include="Migrations\202002201926231_TestSubjectAdded.Designer.cs">
-      <DependentUpon>202002201926231_TestSubjectAdded.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202002201949476_Yeartosubject.cs" />
-    <Compile Include="Migrations\202002201949476_Yeartosubject.Designer.cs">
-      <DependentUpon>202002201949476_Yeartosubject.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202002202205512_FFID.cs" />
-    <Compile Include="Migrations\202002202205512_FFID.Designer.cs">
-      <DependentUpon>202002202205512_FFID.cs</DependentUpon>
+    <Compile Include="Migrations\202002222231424_Generic.cs" />
+    <Compile Include="Migrations\202002222231424_Generic.Designer.cs">
+      <DependentUpon>202002222231424_Generic.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -231,9 +199,9 @@
     <Compile Include="Models\Year.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
+    <Compile Include="ViewModels\NewStudentSubjectsViewModel.cs" />
     <Compile Include="ViewModels\NewStudentViewModel.cs" />
     <Compile Include="ViewModels\NewSubjectViewModel.cs" />
-    <Compile Include="ViewModels\StudentsClassesViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap-lumen.css" />
@@ -335,7 +303,6 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
-    <Content Include="Views\StudentsSubject\Index.cshtml" />
     <Content Include="Views\Student\Index.cshtml" />
     <Content Include="Views\Student\StudentForm.cshtml" />
     <Content Include="Views\Student\Details.cshtml" />
@@ -354,6 +321,11 @@
     <Content Include="Views\Subjects\Details.cshtml" />
     <Content Include="Views\Subjects\Edit.cshtml" />
     <Content Include="Views\Subjects\Index.cshtml" />
+    <Content Include="Views\StudentsSubjects\Create.cshtml" />
+    <Content Include="Views\StudentsSubjects\Delete.cshtml" />
+    <Content Include="Views\StudentsSubjects\Details.cshtml" />
+    <Content Include="Views\StudentsSubjects\Edit.cshtml" />
+    <Content Include="Views\StudentsSubjects\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -372,35 +344,11 @@
     <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202002201355077_Initial.resx">
-      <DependentUpon>202002201355077_Initial.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202002222229326_Reset.resx">
+      <DependentUpon>202002222229326_Reset.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202002201404493_Generic.resx">
-      <DependentUpon>202002201404493_Generic.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202002201449266_IcollectionStudentsinClass.resx">
-      <DependentUpon>202002201449266_IcollectionStudentsinClass.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202002201456489_IcollectionSubjectsinStudent.resx">
-      <DependentUpon>202002201456489_IcollectionSubjectsinStudent.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202002201521284_Icollectionsofsubjectsinyears.resx">
-      <DependentUpon>202002201521284_Icollectionsofsubjectsinyears.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202002201855242_SubjectRenamed.resx">
-      <DependentUpon>202002201855242_SubjectRenamed.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202002201913054_SubjectAdded.resx">
-      <DependentUpon>202002201913054_SubjectAdded.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202002201926231_TestSubjectAdded.resx">
-      <DependentUpon>202002201926231_TestSubjectAdded.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202002201949476_Yeartosubject.resx">
-      <DependentUpon>202002201949476_Yeartosubject.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202002202205512_FFID.resx">
-      <DependentUpon>202002202205512_FFID.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202002222231424_Generic.resx">
+      <DependentUpon>202002222231424_Generic.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

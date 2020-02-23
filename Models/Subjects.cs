@@ -14,11 +14,13 @@ namespace SchoolPortal.Models
 
         public int? PassMark { get; set; }
         
-        public StudentsSubjects StudentsSubjects { get; set;}
+        public virtual ICollection<StudentsSubjects> StudentsSubjects { get; set;}
 
         public int YearId { get; set; }
-       
-       
+
+        
+
+
 
 
 
