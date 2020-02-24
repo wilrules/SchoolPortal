@@ -8,6 +8,7 @@
 
 
 <h2>Register New Student</h2>
+<hr/>
 
 
 
@@ -15,138 +16,138 @@
 
 @using (Html.BeginForm("Create", "Student"))
 {
-<div class="row">
+	<div class="row">
 
-	<div class="col-md-4">
+		<div class="col-md-4">
 
-		<div class="form-group">
+			<div class="form-group">
 
-			@Html.LabelFor(m => m.Student.FirstName)
-			@Html.TextBoxFor(m => m.Student.FirstName, new { @class = "form-control" })
-			@Html.ValidationMessageFor(m => m.Student.FirstName)
-		</div>
-
-		<div class="form-group">
-			@Html.LabelFor(m => m.Student.MiddleName)
-			@Html.TextBoxFor(m => m.Student.MiddleName, new { @class = "form-control" })
-		</div>
-
-		<div class="form-group">
-			@Html.LabelFor(m => m.Student.Lastname)
-			@Html.TextBoxFor(m => m.Student.Lastname, new { @class = "form-control" })
-			@Html.ValidationMessageFor(m => m.Student.Lastname)
-		</div>
-
-		
-
-
-	</div>
-
-	<div class="col-md-4">
-
-
-		<div class="form-group">
-			@Html.LabelFor(m => m.Student.EnrolmentDate)
-			@Html.TextBoxFor(m => m.Student.EnrolmentDate, "{0:d MMM yyyy}", new { @class = "form-control datepicker", placeholder = "dd/mm/yyyy" })
-			@Html.ValidationMessageFor(m => m.Student.EnrolmentDate)
-		</div>
-
-		<div>
-
-			@Html.LabelFor(m => m.Student.GenderId)
-			@Html.DropDownListFor(m => m.Student.GenderId, new SelectList(Model.Genders, "GenderId", "Name"), "", new { @class = "form-control" })
-			@Html.ValidationMessageFor(m => m.Student.GenderId)
-		</div>
-
-		<br />
-		<div>
-			@Html.LabelFor(m => m.Student.YearId)
-			@Html.DropDownListFor(m => m.Student.YearId, new SelectList(Model.Years, "YearId", "YearName"), "", new { @class = "form-control" })
-			@Html.ValidationMessageFor(m => m.Student.YearId)
-		</div>
-		<br />
-
-		<div class="form-group">
-			@Html.LabelFor(m => m.Student.DateOfBirth)
-			@Html.TextBoxFor(m => m.Student.DateOfBirth, "{0:d MMM yyyy}", new { @class = "form-control datepicker", placeholder = "dd/mm/yyyy" })
-			@Html.ValidationMessageFor(m => m.Student.DateOfBirth)
-		</div>
-
-		<br />
-
-
-
-	</div>
-
-
-	<div class="col-md-4">
-
-
-		<div class="form-group">
-			@Html.LabelFor(m => m.Student.StudentAddress.Address1)
-			@Html.TextBoxFor(m => m.Student.StudentAddress.Address1, new { @class = "form-control", })
-			@Html.ValidationMessageFor(m => m.Student.StudentAddress.Address1)
-		</div>
-
-		<div class="form-group">
-			@Html.LabelFor(m => m.Student.StudentAddress.Address2)
-			@Html.TextBoxFor(m => m.Student.StudentAddress.Address2, new { @class = "form-control", })
-			@Html.ValidationMessageFor(m => m.Student.StudentAddress.Address2)
-		</div>
-
-		<div class="form-group">
-			@Html.LabelFor(m => m.Student.StudentAddress.City)
-			@Html.TextBoxFor(m => m.Student.StudentAddress.City, new { @class = "form-control", })
-			@Html.ValidationMessageFor(m => m.Student.StudentAddress.City)
-		</div>
-
-		<button type="submit" class="btn btn-primary">Save</button>
-
-
-
-	</div>
-</div>
-
-}
-		<link href="~/Content/themes/base/jquery-ui.min.css" rel="stylesheet" />
-
-		@section scripts{
-			<script src="~/Scripts/jquery-ui-1.12.1.min.js"></script>
-			<script>
-
-				$(function () {
-
-					$(".datepicker").datepicker({
-
-						dateFormat: "dd-mm-yy",
-						changeMonth: true,
-						changeYear: true,
-						yearRange: "-35:+35",
-					});
-
-				});
-			</script>
-
-		}
-
-		@*<div>
-					@Html.LabelFor(m => m.Student.Type)
-					@Html.DropDownList("Please select", new List<SelectListItem>
-
-							 {
-								new SelectListItem{ Text=" ", Value = "0" },
-								new SelectListItem{ Text="Day Student", Value = "1" },
-								new SelectListItem{ Text="Boarding Student", Value = "2" },
-
-							 }, htmlAttributes: new { @class = "form-control" })
-				</div>
-
-			<div>
-				@Html.LabelFor(m => m.Student.Form.Name)
-				@Html.DropDownListFor(m => m.Student.Form.Name, new SelectList(Model.Form, "Name", "Name"), "", new { @class = "form-control" })
+				@Html.LabelFor(m => m.Student.FirstName)
+				@Html.TextBoxFor(m => m.Student.FirstName, new { @class = "form-control" })
+				@Html.ValidationMessageFor(m => m.Student.FirstName)
 			</div>
 
-		*@
+			<div class="form-group">
+				@Html.LabelFor(m => m.Student.MiddleName)
+				@Html.TextBoxFor(m => m.Student.MiddleName, new { @class = "form-control" })
+			</div>
+
+			<div class="form-group">
+				@Html.LabelFor(m => m.Student.Lastname)
+				@Html.TextBoxFor(m => m.Student.Lastname, new { @class = "form-control" })
+				@Html.ValidationMessageFor(m => m.Student.Lastname)
+			</div>
+
+
+
+
+		</div>
+
+		<div class="col-md-4">
+
+
+			<div class="form-group">
+				@Html.LabelFor(m => m.Student.EnrolmentDate)
+				@Html.TextBoxFor(m => m.Student.EnrolmentDate, "{0:d MMM yyyy}", new { @class = "form-control datepicker", placeholder = "dd/mm/yyyy" })
+				@Html.ValidationMessageFor(m => m.Student.EnrolmentDate)
+			</div>
+
+			<div>
+
+				@Html.LabelFor(m => m.Student.GenderId)
+				@Html.DropDownListFor(m => m.Student.GenderId, new SelectList(Model.Genders, "GenderId", "Name"), "", new { @class = "form-control" })
+				@Html.ValidationMessageFor(m => m.Student.GenderId)
+			</div>
+
+			<br />
+			<div>
+				@Html.LabelFor(m => m.Student.YearId)
+				@Html.DropDownListFor(m => m.Student.YearId, new SelectList(Model.Years, "YearId", "YearName"), "", new { @class = "form-control" })
+				@Html.ValidationMessageFor(m => m.Student.YearId)
+			</div>
+			<br />
+
+			<div class="form-group">
+				@Html.LabelFor(m => m.Student.DateOfBirth)
+				@Html.TextBoxFor(m => m.Student.DateOfBirth, "{0:d MMM yyyy}", new { @class = "form-control datepicker", placeholder = "dd/mm/yyyy" })
+				@Html.ValidationMessageFor(m => m.Student.DateOfBirth)
+			</div>
+
+			<br />
+
+
+
+		</div>
+
+
+		<div class="col-md-4">
+
+
+			<div class="form-group">
+				@Html.LabelFor(m => m.Student.StudentAddress.Address1)
+				@Html.TextBoxFor(m => m.Student.StudentAddress.Address1, new { @class = "form-control", })
+				@Html.ValidationMessageFor(m => m.Student.StudentAddress.Address1)
+			</div>
+
+			<div class="form-group">
+				@Html.LabelFor(m => m.Student.StudentAddress.Address2)
+				@Html.TextBoxFor(m => m.Student.StudentAddress.Address2, new { @class = "form-control", })
+				@Html.ValidationMessageFor(m => m.Student.StudentAddress.Address2)
+			</div>
+
+			<div class="form-group">
+				@Html.LabelFor(m => m.Student.StudentAddress.City)
+				@Html.TextBoxFor(m => m.Student.StudentAddress.City, new { @class = "form-control", })
+				@Html.ValidationMessageFor(m => m.Student.StudentAddress.City)
+			</div>
+
+			<button type="submit" class="btn btn-primary">Save</button>
+
+
+
+		</div>
+	</div>
+
+}
+<link href="~/Content/themes/base/jquery-ui.min.css" rel="stylesheet" />
+
+@section scripts{
+	<script src="~/Scripts/jquery-ui-1.12.1.min.js"></script>
+	<script>
+
+		$(function () {
+
+			$(".datepicker").datepicker({
+
+				dateFormat: "dd-mm-yy",
+				changeMonth: true,
+				changeYear: true,
+				yearRange: "-35:+35",
+			});
+
+		});
+	</script>
+
+}
+
+@*<div>
+			@Html.LabelFor(m => m.Student.Type)
+			@Html.DropDownList("Please select", new List<SelectListItem>
+
+					 {
+						new SelectListItem{ Text=" ", Value = "0" },
+						new SelectListItem{ Text="Day Student", Value = "1" },
+						new SelectListItem{ Text="Boarding Student", Value = "2" },
+
+					 }, htmlAttributes: new { @class = "form-control" })
+		</div>
+
+	<div>
+		@Html.LabelFor(m => m.Student.Form.Name)
+		@Html.DropDownListFor(m => m.Student.Form.Name, new SelectList(Model.Form, "Name", "Name"), "", new { @class = "form-control" })
+	</div>
+
+*@
 
 
 

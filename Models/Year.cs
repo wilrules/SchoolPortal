@@ -15,12 +15,12 @@ namespace SchoolPortal.Models
 
         public string YearName { get; set; }
 
+
+
+
+
+
         //Relationships
-
-     
-      
-
-
         public virtual ICollection<Student> Students { get; set; }
 
         public virtual ICollection<StudentsSubjects> StudentSubjects { get; set; }
