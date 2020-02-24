@@ -262,6 +262,34 @@
     <Compile Include="Migrations\202002232316325_CK1.Designer.cs">
       <DependentUpon>202002232316325_CK1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202002240517593_SubjectstoYears.cs" />
+    <Compile Include="Migrations\202002240517593_SubjectstoYears.Designer.cs">
+      <DependentUpon>202002240517593_SubjectstoYears.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202002240523231_YearId.cs" />
+    <Compile Include="Migrations\202002240523231_YearId.Designer.cs">
+      <DependentUpon>202002240523231_YearId.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202002240532408_SSsortout.cs" />
+    <Compile Include="Migrations\202002240532408_SSsortout.Designer.cs">
+      <DependentUpon>202002240532408_SSsortout.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202002240713149_TeachertoYear.cs" />
+    <Compile Include="Migrations\202002240713149_TeachertoYear.Designer.cs">
+      <DependentUpon>202002240713149_TeachertoYear.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202002240717004_Reverse.cs" />
+    <Compile Include="Migrations\202002240717004_Reverse.Designer.cs">
+      <DependentUpon>202002240717004_Reverse.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202002240724170_1yeartoManyTeachers.cs" />
+    <Compile Include="Migrations\202002240724170_1yeartoManyTeachers.Designer.cs">
+      <DependentUpon>202002240724170_1yeartoManyTeachers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202002240838396_resetall.cs" />
+    <Compile Include="Migrations\202002240838396_resetall.Designer.cs">
+      <DependentUpon>202002240838396_resetall.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Gender.cs" />
@@ -484,6 +512,27 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202002232316325_CK1.resx">
       <DependentUpon>202002232316325_CK1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202002240517593_SubjectstoYears.resx">
+      <DependentUpon>202002240517593_SubjectstoYears.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202002240523231_YearId.resx">
+      <DependentUpon>202002240523231_YearId.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202002240532408_SSsortout.resx">
+      <DependentUpon>202002240532408_SSsortout.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202002240713149_TeachertoYear.resx">
+      <DependentUpon>202002240713149_TeachertoYear.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202002240717004_Reverse.resx">
+      <DependentUpon>202002240717004_Reverse.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202002240724170_1yeartoManyTeachers.resx">
+      <DependentUpon>202002240724170_1yeartoManyTeachers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202002240838396_resetall.resx">
+      <DependentUpon>202002240838396_resetall.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

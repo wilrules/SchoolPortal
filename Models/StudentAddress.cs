@@ -25,7 +25,7 @@ namespace SchoolPortal.Models
 
         public string State { get; set; }
 
-        [Required]
+      
         public virtual Student Student { get; set; }
     }
 }

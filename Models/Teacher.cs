@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Web;
 
@@ -8,6 +9,7 @@ namespace SchoolPortal.Models
 {
     public class Teacher
     {
+    
         public int TeacherId { get; set; }
 
         [Display(Name = "First Name")]
@@ -23,7 +25,8 @@ namespace SchoolPortal.Models
         public string EmailAddress { get; set; }
 
 
-        //relationship
+        //relationship Navigation Properties for viewmodels
+
         public int YearId { get; set; }
         public virtual Year Year { get; set; }
 

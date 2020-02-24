@@ -16,7 +16,7 @@
         </th>
 
 
-        <th><label><b>Class Teacher</b></label></th>
+     
 
         <th><label><b>Number of Enrolled Students</b></label></th>
 
@@ -33,11 +33,11 @@
         @Html.DisplayFor(modelItem => item.YearName)
     </td>
 
-    <td>
+    @*<td>
     
-        @Html.DisplayFor(modelItem => item.Teacher.FirstName)
+        @Html.DisplayFor(modelItem => item.Teachers)
         @Html.DisplayFor(modelItem => item.Teacher.LastName)
-    </td>
+    </td>*@
   
 
     <td>@Html.DisplayFor(modelItem => item.Students.Count)</td>

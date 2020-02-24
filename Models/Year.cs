@@ -8,6 +8,7 @@ namespace SchoolPortal.Models
     {
 
        
+      
         public int YearId { get; set; }
 
         public int YearNumber { get; set; }
@@ -16,7 +17,8 @@ namespace SchoolPortal.Models
 
         //Relationships
 
-    
+     
+      
 
 
         public virtual ICollection<Student> Students { get; set; }

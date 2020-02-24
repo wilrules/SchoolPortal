@@ -19,11 +19,11 @@ namespace SchoolPortal.Controllers
 
 
         //// GET: Years
-        //public ActionResult Index()
-        //{
-        //    var years = db.Years.Include(y => y.Teacher);
-        //    return View(years.ToList());
-        //}
+        public ActionResult Index()
+        {
+            var years = db.Years;
+            return View(years.ToList());
+        }
 
         // GET: Years/Details/5
         public ActionResult Details(int? id)
@@ -82,8 +82,6 @@ namespace SchoolPortal.Controllers
         }
 
         // POST: Years/Edit/5
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Edit([Bind(Include = "YearId,YearNumber,YearName")] Year year)
@@ -94,7 +92,7 @@ namespace SchoolPortal.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            //ViewBag.YearId = new SelectList(db.Teachers, "TeacherId", "Title", year.YearId);
+            ViewBag.YearId = new SelectList(db.Teachers, "TeacherId", "Title", year.YearId);
             return View(year);
         }
 

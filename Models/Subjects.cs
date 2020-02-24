@@ -13,12 +13,20 @@ namespace SchoolPortal.Models
         public string SubjectName { get; set; } 
 
         public int? PassMark { get; set; }
-        
-        public virtual ICollection<StudentsSubjects> StudentsSubjects { get; set;}
 
-      
 
-        
+        //Rels
+        public virtual ICollection<StudentsSubjects> StudentsSubjects { get; set; }
+
+
+
+
+        // Used for viewmodel NewSubjectViewModel
+        public int YearId { get; set; } 
+        public virtual ICollection<Year> Years { get; set; }
+
+
+
 
 
 
