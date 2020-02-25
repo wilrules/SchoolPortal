@@ -1,22 +1,15 @@
 ﻿using SchoolPortal.Models;
-using System.Data.Entity;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Mvc;
 using SchoolPortal.ViewModels;
-using System.Data.Entity.Validation;
-using System.Net;
+using System.Data.Entity;
+using System.Linq;
+using System.Web.Mvc;
 
 namespace SchoolPortal.Controllers
 {
     public class StudentController : Controller
     {
-
         // DB context to access the database
         private ApplicationDbContext _context;
-
 
         //initializing the _context in a construtor
         public StudentController()
@@ -24,14 +17,10 @@ namespace SchoolPortal.Controllers
             _context = new ApplicationDbContext();
         }
 
-
         protected override void Dispose(bool disposing)
         {
             _context.Dispose();
         }
-
-
-
 
         //// GET: Student
         public ActionResult Index()
@@ -40,12 +29,9 @@ namespace SchoolPortal.Controllers
             return View(students);
         }
 
-
         // GET: Details
         public ActionResult Details(int id)
         {
-
-
             var student = _context.Students.SingleOrDefault(c => c.Id == id);
             if (student == null)
             {
@@ -53,25 +39,26 @@ namespace SchoolPortal.Controllers
             }
 
             return View(student);
-
         }
-
-
 
         public ActionResult New()
         {
-
             var genders = _context.Genders.ToList();
             var years = _context.Years.ToList();
+            var religion = _context.Religions.ToList();
+            var tribe = _context.Tribes.ToList();
+
             var viewmodel = new StudentFormViewModel
             {
                 Genders = genders,
-                Years = years
+                Years = years,
+                Religions = religion,
+                Tribes = tribe
+               
             };
 
             return View("StudentForm", viewmodel);
         }
-
 
         [HttpPost]
         public ActionResult Create(Student student)
@@ -82,44 +69,20 @@ namespace SchoolPortal.Controllers
                 {
                     Student = student,
                     Genders = _context.Genders.ToList(),
-                    Years = _context.Years.ToList()
-
-               
-              
-                
+                    Years = _context.Years.ToList(),
+                    Tribes = _context.Tribes.ToList(),
+                    Religions = _context.Religions.ToList()
                 };
                 return View("StudentForm", viewModel);
             };
 
-            try
-            {
-                if (student.Id == 0)
+            if (student.Id == 0)
 
-
-                    _context.Students.Add(student);
+                _context.Students.Add(student);
                 _context.SaveChanges();
-                
-
-            }
-           
-            catch (DbEntityValidationException e)
-            {
-
-                Console.WriteLine(e);
-            }
-
 
             return RedirectToAction("Index", "Student");
-
         }
-             
-                     
-     
-
-
-
-        
-
 
         public ActionResult Edit(int? id)
         {
@@ -138,9 +101,6 @@ namespace SchoolPortal.Controllers
             };
 
             return View("StudentForm", viewmodel);
-
-
-
         }
     }
 }

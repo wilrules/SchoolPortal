@@ -39,18 +39,31 @@ namespace SchoolPortal.Models
 
 
 
+
+
+
         //Rels
         public ICollection<StudentsSubjects> StudentsSubjects { get; set; }
 
-        [Required]
-        public virtual StudentAddress StudentAddress { get; set; }
 
+        [Display(Name = "Religion")]
+        public int ReligionId { get; set; }
+        public virtual Religion Religion { get; set; }
+
+        [Display(Name = "Tribe")]
+        public int TribeId { get; set; }
+        public virtual Tribe Tribe { get; set; }
+
+        [Display(Name = "Class")]
         public int YearId { get; set; }
         public virtual Year Year { get; set; }
 
+        [Display(Name = "Gender")]
         public int GenderId { get; set; }
         public Gender Gender { get; set; }
 
+        [Required]
+        public StudentAddress StudentAddress { get; set; }
 
 
 
@@ -59,7 +72,10 @@ namespace SchoolPortal.Models
 
 
 
-       
+
+
+
+
 
     }
 }

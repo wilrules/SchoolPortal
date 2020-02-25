@@ -306,17 +306,43 @@
     <Compile Include="Migrations\202002241832509_0045-3.Designer.cs">
       <DependentUpon>202002241832509_0045-3.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202002251856462_0030and0031.cs" />
+    <Compile Include="Migrations\202002251856462_0030and0031.Designer.cs">
+      <DependentUpon>202002251856462_0030and0031.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202002251907234_Changestodb.cs" />
+    <Compile Include="Migrations\202002251907234_Changestodb.Designer.cs">
+      <DependentUpon>202002251907234_Changestodb.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202002251930584_saddressadjuested.cs" />
+    <Compile Include="Migrations\202002251930584_saddressadjuested.Designer.cs">
+      <DependentUpon>202002251930584_saddressadjuested.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202002251944367_FK1.cs" />
+    <Compile Include="Migrations\202002251944367_FK1.Designer.cs">
+      <DependentUpon>202002251944367_FK1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202002251951584_religion.cs" />
+    <Compile Include="Migrations\202002251951584_religion.Designer.cs">
+      <DependentUpon>202002251951584_religion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202002252023043_tribes.cs" />
+    <Compile Include="Migrations\202002252023043_tribes.Designer.cs">
+      <DependentUpon>202002252023043_tribes.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Gender.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\Religion.cs" />
     <Compile Include="Models\Student.cs" />
     <Compile Include="Models\StudentAddress.cs" />
     <Compile Include="Models\StudentsSubjects.cs" />
     <Compile Include="Models\Subjects.cs" />
     <Compile Include="Models\Teacher.cs" />
     <Compile Include="Models\Title.cs" />
+    <Compile Include="Models\Tribe.cs" />
     <Compile Include="Models\Year.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
@@ -561,6 +587,24 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202002241832509_0045-3.resx">
       <DependentUpon>202002241832509_0045-3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202002251856462_0030and0031.resx">
+      <DependentUpon>202002251856462_0030and0031.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202002251907234_Changestodb.resx">
+      <DependentUpon>202002251907234_Changestodb.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202002251930584_saddressadjuested.resx">
+      <DependentUpon>202002251930584_saddressadjuested.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202002251944367_FK1.resx">
+      <DependentUpon>202002251944367_FK1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202002251951584_religion.resx">
+      <DependentUpon>202002251951584_religion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202002252023043_tribes.resx">
+      <DependentUpon>202002252023043_tribes.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

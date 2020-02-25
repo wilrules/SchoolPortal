@@ -9,23 +9,28 @@ namespace SchoolPortal.Models
 {
     public class StudentAddress
     {
+       
         [ForeignKey("Student")]
         public int StudentAddressId { get; set; }
 
+
         [Required]
-        public string Address1 { get; set; }
+        [Display(Name = "House Name or House Number")]
+        public string HouseNumberOrName { get; set; }
+
         [Required]
-        public string Address2 { get; set; }
+        [Display(Name = "First Line Of Address")]
+        public string FirstLineofAdd  { get; set; }
 
-        
-        public string Address3 { get; set; }
+        [Required]
+        [Display(Name = "Second Line Of Address")]
+        public string SecondLineofAdd { get; set; }
 
+        [Required]
+        public string Area { get; set; }
+
+        public Student Student { get; set; }
       
-        public string City { get; set; }
-
-        public string State { get; set; }
-
-      
-        public virtual Student Student { get; set; }
+       
     }
 }

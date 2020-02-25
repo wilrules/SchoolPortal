@@ -14,5 +14,9 @@ namespace SchoolPortal.ViewModels
         public Student Student { get; set; }
 
         public IEnumerable<Year> Years { get; set; }
+
+        public IEnumerable<Religion> Religions { get; set; }
+
+        public IEnumerable<Tribe> Tribes { get; set; }
     }
 }

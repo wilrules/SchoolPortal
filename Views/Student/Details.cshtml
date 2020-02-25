@@ -6,9 +6,14 @@
 }
 
 <h3>@Model.FirstName @Model.MiddleName @Model.Lastname</h3>
+
+<hr />
+
 <p>
 
 	<div><b>Class :</b> Primary @Model.YearId</div>
+
+	<hr />
 
 	<div><b>Date of birth :</b> @Model.DateOfBirth.Value.ToShortDateString()</div>
 
@@ -16,12 +21,27 @@
 		var date = DateTime.Now.Subtract(@Model.DateOfBirth.Value).Days.ToString();
 		var age = @Convert.ToInt32(date) / 365;
 	}
+
+	<hr />
+
 	<div><b>Age :</b>  @age</div>
 
-	<div><b>Home Address :</b> @Model.StudentAddress.Address1 @Model.StudentAddress.Address2</div>
+	<hr />
 
-	<div><b>City :</b> @Model.StudentAddress.City</div>
-	<div><b>State :</b> @Model.StudentAddress.State</div>
+	<div><b>Home Address :</b> @Model.StudentAddress.HouseNumberOrName @Model.StudentAddress.FirstLineofAdd @Model.StudentAddress.SecondLineofAdd @Model.StudentAddress.Area</div>
+
+	<hr />
+
+	<div><b>Gender :</b>  @Model.Gender.Name.ToString();</div>
+
+	<hr />
+
+
 	<div><b>Religion :</b></div>
+
+	<hr />
+
 	<div><b>Tribe :</b></div>
+
+	<hr />
 </p>
