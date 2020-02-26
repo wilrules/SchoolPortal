@@ -24,7 +24,7 @@
 		<tr>
 			<td>@students.FirstName @students.MiddleName  @students.Lastname</td>
 			<td>@students.Year.YearName</td>
-			<td>@students.GenderId</td>
+			<td>@students.Gender.Name</td>
 			
 
 
@@ -38,7 +38,7 @@
 					<ul class="dropdown-menu">
 						<li>@Html.ActionLink("View Details", "Details", "Student", new { id = students.Id }, null)</li>
 						<li>@Html.ActionLink("Edit Student", "Edit", "Student", new { id = students.Id }, null)</li>
-						<li>@Html.ActionLink("View Details", "Details", "Student", new { id = students.Id }, null)</li>
+						<li>@Html.ActionLink("Delete Student", "Delete", "Student", new { id = students.Id }, null)</li>
 					</ul>
 				</div>
 			</td>

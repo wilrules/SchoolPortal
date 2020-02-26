@@ -330,6 +330,30 @@
     <Compile Include="Migrations\202002252023043_tribes.Designer.cs">
       <DependentUpon>202002252023043_tribes.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202002260814027_CD1.cs" />
+    <Compile Include="Migrations\202002260814027_CD1.Designer.cs">
+      <DependentUpon>202002260814027_CD1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202002260830466_SS1V1.cs" />
+    <Compile Include="Migrations\202002260830466_SS1V1.Designer.cs">
+      <DependentUpon>202002260830466_SS1V1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202002260929323_addyfix.cs" />
+    <Compile Include="Migrations\202002260929323_addyfix.Designer.cs">
+      <DependentUpon>202002260929323_addyfix.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202002261021559_studfix101.cs" />
+    <Compile Include="Migrations\202002261021559_studfix101.Designer.cs">
+      <DependentUpon>202002261021559_studfix101.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202002261025456_Studaddyfix102.cs" />
+    <Compile Include="Migrations\202002261025456_Studaddyfix102.Designer.cs">
+      <DependentUpon>202002261025456_Studaddyfix102.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202002261031508_Sqlfix.cs" />
+    <Compile Include="Migrations\202002261031508_Sqlfix.Designer.cs">
+      <DependentUpon>202002261031508_Sqlfix.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Gender.cs" />
@@ -474,6 +498,7 @@
     <Content Include="Views\StudentsSubjects\Edit.cshtml" />
     <Content Include="Views\StudentsSubjects\Index.cshtml" />
     <Content Include="Views\Teachers\Create.cshtml" />
+    <Content Include="Views\Student\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -605,6 +630,24 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202002252023043_tribes.resx">
       <DependentUpon>202002252023043_tribes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202002260814027_CD1.resx">
+      <DependentUpon>202002260814027_CD1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202002260830466_SS1V1.resx">
+      <DependentUpon>202002260830466_SS1V1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202002260929323_addyfix.resx">
+      <DependentUpon>202002260929323_addyfix.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202002261021559_studfix101.resx">
+      <DependentUpon>202002261021559_studfix101.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202002261025456_Studaddyfix102.resx">
+      <DependentUpon>202002261025456_Studaddyfix102.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202002261031508_Sqlfix.resx">
+      <DependentUpon>202002261031508_Sqlfix.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

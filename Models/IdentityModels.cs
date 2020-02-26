@@ -30,7 +30,7 @@ namespace SchoolPortal.Models
 
         public DbSet <Student> Students { get; set; }
 
-        public DbSet <StudentAddress> StudentAddress { get; set; }
+        //public DbSet <StudentAddress> StudentAddress { get; set; }
       
         public DbSet<StudentsSubjects> StudentsSubjects { get; set; }
 

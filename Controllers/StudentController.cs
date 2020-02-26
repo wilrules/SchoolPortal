@@ -2,6 +2,7 @@
 using SchoolPortal.ViewModels;
 using System.Data.Entity;
 using System.Linq;
+using System.Net;
 using System.Web.Mvc;
 
 namespace SchoolPortal.Controllers
@@ -25,14 +26,23 @@ namespace SchoolPortal.Controllers
         //// GET: Student
         public ActionResult Index()
         {
-            var students = _context.Students.Include(y => y.Year).ToList();
+            var students = _context.Students.
+            Include(y => y.Year).
+            Include(g => g.Gender).ToList();
             return View(students);
         }
 
         // GET: Details
         public ActionResult Details(int id)
         {
-            var student = _context.Students.SingleOrDefault(c => c.Id == id);
+            var student = _context.Students.
+            Include(y => y.Year).
+            //Include(s => s.StudentAddress).
+            Include(g => g.Gender).
+            Include(r => r.Religion).
+            Include(t => t.Tribe).
+            SingleOrDefault(c => c.Id == id);
+
             if (student == null)
             {
                 return HttpNotFound();
@@ -54,7 +64,6 @@ namespace SchoolPortal.Controllers
                 Years = years,
                 Religions = religion,
                 Tribes = tribe
-               
             };
 
             return View("StudentForm", viewmodel);
@@ -79,7 +88,7 @@ namespace SchoolPortal.Controllers
             if (student.Id == 0)
 
                 _context.Students.Add(student);
-                _context.SaveChanges();
+            _context.SaveChanges();
 
             return RedirectToAction("Index", "Student");
         }
@@ -97,10 +106,38 @@ namespace SchoolPortal.Controllers
             {
                 Student = student,
                 Genders = _context.Genders.ToList(),
-                Years = _context.Years.ToList()
+                Years = _context.Years.ToList(),
+                Religions = _context.Religions.ToList(),
+                Tribes = _context.Tribes.ToList()
             };
-
             return View("StudentForm", viewmodel);
+        }
+
+        // GET: Teachers/Delete/5
+        public ActionResult Delete(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Student student = _context.Students.Find(id);
+            if (student == null)
+            {
+                return HttpNotFound();
+            }
+            return View(student);
+        }
+
+        // POST: Teachers/Delete/5
+        [HttpPost, ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public ActionResult DeleteConfirmed(int id)
+        {
+            Student student = _context.Students.Find(id);
+
+            _context.Students.Remove(student);
+            _context.SaveChanges();
+            return RedirectToAction("Index");
         }
     }
 }

@@ -9,39 +9,36 @@
 
 <hr />
 
-<p>
 
-	<div><b>Class :</b> Primary @Model.YearId</div>
+<div class="row">
+	<div class="col-md-6">
+		<div><b>Home Address :</b> @Model.StudentAddress.HouseNumberOrName @Model.StudentAddress.FirstLineofAdd @Model.StudentAddress.SecondLineofAdd @Model.StudentAddress.Area </div>
+		<hr />
+		<div><b>Date of birth :</b> @Model.DateOfBirth.Value.ToShortDateString()</div>
 
-	<hr />
-
-	<div><b>Date of birth :</b> @Model.DateOfBirth.Value.ToShortDateString()</div>
-
-	@{
-		var date = DateTime.Now.Subtract(@Model.DateOfBirth.Value).Days.ToString();
-		var age = @Convert.ToInt32(date) / 365;
-	}
-
-	<hr />
-
-	<div><b>Age :</b>  @age</div>
-
-	<hr />
-
-	<div><b>Home Address :</b> @Model.StudentAddress.HouseNumberOrName @Model.StudentAddress.FirstLineofAdd @Model.StudentAddress.SecondLineofAdd @Model.StudentAddress.Area</div>
-
-	<hr />
-
-	<div><b>Gender :</b>  @Model.Gender.Name.ToString();</div>
-
-	<hr />
+		@{
+			var date = DateTime.Now.Subtract(@Model.DateOfBirth.Value).Days.ToString();
+			var age = @Convert.ToInt32(date) / 365;
+		}
+		<hr />
+		<div><b>Age :</b>  @age</div>
+		<hr />
+		<div><b>Tribe :</b> @Model.Tribe.TribeName</div>
 
 
-	<div><b>Religion :</b></div>
 
-	<hr />
+	</div>
+	<div class="col-md-6">
+		<div><b>Class :</b> Primary @Model.YearId</div>
+		<hr />
+		<div><b>Gender :</b>  @Model.Gender.Name</div>
+		<hr />
+		<div><b>Religion :</b> @Model.Religion.ReligionName  </div>
+	
+		
 
-	<div><b>Tribe :</b></div>
+	</div>
 
-	<hr />
-</p>
+</div>
+
+	

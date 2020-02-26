@@ -62,8 +62,8 @@ namespace SchoolPortal.Models
         public int GenderId { get; set; }
         public Gender Gender { get; set; }
 
-        [Required]
-        public StudentAddress StudentAddress { get; set; }
+
+        public virtual StudentAddress StudentAddress { get; set; }
 
 
 
