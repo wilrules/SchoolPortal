@@ -96,32 +96,32 @@
 		<div class="col-md-4">
 
 			<div class="form-group">
-				@Html.LabelFor(m => m.Student.StudentAddress.HouseNumberOrName)
-				@Html.TextBoxFor(m => m.Student.StudentAddress.HouseNumberOrName, new { @class = "form-control", })
-				@Html.ValidationMessageFor(m => m.Student.StudentAddress.HouseNumberOrName)
+				@Html.LabelFor(m => m.Student.HouseNumberOrName)
+				@Html.TextBoxFor(m => m.Student.HouseNumberOrName, new { @class = "form-control", })
+				@Html.ValidationMessageFor(m => m.Student.HouseNumberOrName)
 			</div>
 
 
 			<div class="form-group">
-				@Html.LabelFor(m => m.Student.StudentAddress.FirstLineofAdd)
-				@Html.TextBoxFor(m => m.Student.StudentAddress.FirstLineofAdd, new { @class = "form-control", })
-				@Html.ValidationMessageFor(m => m.Student.StudentAddress.FirstLineofAdd)
+				@Html.LabelFor(m => m.Student.FirstLineofAdd)
+				@Html.TextBoxFor(m => m.Student.FirstLineofAdd, new { @class = "form-control", })
+				@Html.ValidationMessageFor(m => m.Student.FirstLineofAdd)
 			</div>
 
 			<div class="form-group">
-				@Html.LabelFor(m => m.Student.StudentAddress.SecondLineofAdd)
-				@Html.TextBoxFor(m => m.Student.StudentAddress.SecondLineofAdd, new { @class = "form-control", })
-				@Html.ValidationMessageFor(m => m.Student.StudentAddress.SecondLineofAdd)
+				@Html.LabelFor(m => m.Student.SecondLineofAdd)
+				@Html.TextBoxFor(m => m.Student.SecondLineofAdd, new { @class = "form-control", })
+				@Html.ValidationMessageFor(m => m.Student.SecondLineofAdd)
 			</div>
 
 			<div class="form-group">
-				@Html.LabelFor(m => m.Student.StudentAddress.Area)
-				@Html.TextBoxFor(m => m.Student.StudentAddress.Area, new { @class = "form-control", })
-				@Html.ValidationMessageFor(m => m.Student.StudentAddress.Area)
+				@Html.LabelFor(m => m.Student.Area)
+				@Html.TextBoxFor(m => m.Student.Area, new { @class = "form-control", })
+				@Html.ValidationMessageFor(m => m.Student.Area)
 			</div>
+			@Html.HiddenFor(m => m.Student.Id)
 
 			<button type="submit" class="btn btn-primary">Save</button>
-
 
 
 		</div>

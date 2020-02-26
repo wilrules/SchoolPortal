@@ -4,7 +4,7 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<h2></h2>
 
 <p>
     @Html.ActionLink("Create New", "Create")
@@ -43,7 +43,7 @@
             <ul class="dropdown-menu">
                 <li>@Html.ActionLink("Edit Subject", "Edit", "Subjects", new { id = item.SubjectsId }, null)</li>
                 <li>@Html.ActionLink("Subject Details", "Details", "Subjects", new { id = item.SubjectsId }, null)</li>
-                <li>@Html.ActionLink("Delete Subject", "Delete", "Subjects", new { id = item.SubjectsId }, null)</li>
+                <li>@Html.ActionLink("Not in Use", "Delete", "Subjects", new { id = item.SubjectsId }, null)</li>
             </ul>
         </div>
     </td>

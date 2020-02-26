@@ -38,6 +38,23 @@ namespace SchoolPortal.Models
         [DisplayFormat(DataFormatString = "{0:dd-MM-yyyy}", ApplyFormatInEditMode = true)]
 
 
+        [Required]
+        [Display(Name = "House Name or House Number")]
+        public string HouseNumberOrName { get; set; }
+
+        [Required]
+        [Display(Name = "First Line Of Address")]
+        public string FirstLineofAdd { get; set; }
+
+        [Required]
+        [Display(Name = "Second Line Of Address")]
+        public string SecondLineofAdd { get; set; }
+
+        [Required]
+        [Display(Name = "Area")]
+        public string Area { get; set; }
+
+
 
 
 
@@ -63,7 +80,7 @@ namespace SchoolPortal.Models
         public Gender Gender { get; set; }
 
 
-        public virtual StudentAddress StudentAddress { get; set; }
+    
 
 
 

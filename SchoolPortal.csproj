@@ -354,6 +354,10 @@
     <Compile Include="Migrations\202002261031508_Sqlfix.Designer.cs">
       <DependentUpon>202002261031508_Sqlfix.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202002261829381_Addressfix1.cs" />
+    <Compile Include="Migrations\202002261829381_Addressfix1.Designer.cs">
+      <DependentUpon>202002261829381_Addressfix1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Gender.cs" />
@@ -361,7 +365,6 @@
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Religion.cs" />
     <Compile Include="Models\Student.cs" />
-    <Compile Include="Models\StudentAddress.cs" />
     <Compile Include="Models\StudentsSubjects.cs" />
     <Compile Include="Models\Subjects.cs" />
     <Compile Include="Models\Teacher.cs" />
@@ -648,6 +651,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202002261031508_Sqlfix.resx">
       <DependentUpon>202002261031508_Sqlfix.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202002261829381_Addressfix1.resx">
+      <DependentUpon>202002261829381_Addressfix1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

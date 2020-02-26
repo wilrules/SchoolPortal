@@ -41,6 +41,7 @@ namespace SchoolPortal.Controllers
             Include(g => g.Gender).
             Include(r => r.Religion).
             Include(t => t.Tribe).
+            Include(s => s.StudentsSubjects).
             SingleOrDefault(c => c.Id == id);
 
             if (student == null)
@@ -83,24 +84,38 @@ namespace SchoolPortal.Controllers
                     Religions = _context.Religions.ToList()
                 };
                 return View("StudentForm", viewModel);
-            };
+            }
 
             if (student.Id == 0)
-
                 _context.Students.Add(student);
+            else
+            {
+                var studentInDb = _context.Students.Single(c => c.Id == student.Id);
+                studentInDb.FirstName = student.FirstName;
+                studentInDb.MiddleName = student.MiddleName;
+                studentInDb.Lastname = student.Lastname;
+                studentInDb.Religion = student.Religion;
+                studentInDb.Tribe = student.Tribe;
+                studentInDb.EnrolmentDate = student.EnrolmentDate;
+                studentInDb.Gender = student.Gender;
+                studentInDb.Year = student.Year;
+                studentInDb.DateOfBirth = student.DateOfBirth;
+                studentInDb.HouseNumberOrName = student.HouseNumberOrName;
+                studentInDb.FirstLineofAdd = student.FirstLineofAdd;
+                studentInDb.SecondLineofAdd = student.SecondLineofAdd;
+                studentInDb.Area = student.Area;
+            }
             _context.SaveChanges();
-
             return RedirectToAction("Index", "Student");
         }
 
-        public ActionResult Edit(int? id)
+        public ActionResult Edit(int id)
         {
             var student = _context.Students.SingleOrDefault(s => s.Id == id);
 
             if (student == null)
-            {
+
                 return HttpNotFound();
-            }
 
             var viewmodel = new StudentFormViewModel
             {
