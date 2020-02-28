@@ -18,38 +18,48 @@
             @Html.DisplayNameFor(model => model.PassMark)
         </th>
         <th>
-           <lable><b>Class</b></lable>
+            <lable><b>Class</b></lable>
         </th>
 
     </tr>
 
-@foreach (var item in Model) {
-<tr>
-    <td>
-        @Html.DisplayFor(modelItem => item.SubjectName)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.PassMark)
-    </td>
-    <td>
-        Primary -@Html.DisplayFor(modelItem => item.YearId)
-    </td>
-    <td>
-        <div class="btn-group">
-            <a href="#" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-                Select Action
-                <span class="caret"></span>
-            </a>
-            <ul class="dropdown-menu">
-                <li>@Html.ActionLink("Edit Subject", "Edit", "Subjects", new { id = item.SubjectsId }, null)</li>
-                <li>@Html.ActionLink("Subject Details", "Details", "Subjects", new { id = item.SubjectsId }, null)</li>
-                <li>@Html.ActionLink("Not in Use", "Delete", "Subjects", new { id = item.SubjectsId }, null)</li>
-            </ul>
-        </div>
-    </td>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.SubjectName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PassMark)
+            </td>
+            <td>
+                Primary -@Html.DisplayFor(modelItem => item.YearId)
+            </td>
+            <td>
+                <div class="btn-group">
+                    <a href="#" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                        Select Action
+                        <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li>@Html.ActionLink("Edit Subject", "Edit", "Subjects", new { id = item.SubjectsId }, null)</li>
+                        <li>@Html.ActionLink("Subject Details", "Details", "Subjects", new { id = item.SubjectsId }, null)</li>
+                        <li>@Html.ActionLink("Not in Use", "Delete", "Subjects", new { id = item.SubjectsId }, null)</li>
+                    </ul>
+                </div>
+            </td>
 
 
-</tr>
-}
+        </tr>
+
+
+
+    }
+
+
 
 </table>
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>

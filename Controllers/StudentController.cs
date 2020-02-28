@@ -83,12 +83,47 @@ namespace SchoolPortal.Controllers
                     Tribes = _context.Tribes.ToList(),
                     Religions = _context.Religions.ToList()
                 };
-                return View("StudentForm", viewModel);
+                return View("StudentForm", viewModel);     
             }
-
             if (student.Id == 0)
                 _context.Students.Add(student);
-            else
+                _context.SaveChanges();
+
+            return RedirectToAction("Index", "Student");
+
+        }
+
+
+
+
+       
+          
+        
+
+        public ActionResult Edit(int id)
+        {
+            var student = _context.Students.SingleOrDefault(s => s.Id == id);
+
+            if (student == null)
+
+                return HttpNotFound();
+
+            var viewmodel = new StudentFormViewModel
+            {
+                Student = student,
+                Genders = _context.Genders.ToList(),
+                Years = _context.Years.ToList(),
+                Religions = _context.Religions.ToList(),
+                Tribes = _context.Tribes.ToList()
+            };
+            return View("StudentEditForm", viewmodel);
+        }
+
+
+        [HttpPost]
+        public ActionResult Edit (Student student)
+        {
+            if (ModelState.IsValid)
             {
                 var studentInDb = _context.Students.Single(c => c.Id == student.Id);
                 studentInDb.FirstName = student.FirstName;
@@ -108,25 +143,9 @@ namespace SchoolPortal.Controllers
             _context.SaveChanges();
             return RedirectToAction("Index", "Student");
         }
+       
 
-        public ActionResult Edit(int id)
-        {
-            var student = _context.Students.SingleOrDefault(s => s.Id == id);
 
-            if (student == null)
-
-                return HttpNotFound();
-
-            var viewmodel = new StudentFormViewModel
-            {
-                Student = student,
-                Genders = _context.Genders.ToList(),
-                Years = _context.Years.ToList(),
-                Religions = _context.Religions.ToList(),
-                Tribes = _context.Tribes.ToList()
-            };
-            return View("StudentForm", viewmodel);
-        }
 
         // GET: Teachers/Delete/5
         public ActionResult Delete(int? id)

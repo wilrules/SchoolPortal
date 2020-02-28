@@ -358,6 +358,18 @@
     <Compile Include="Migrations\202002261829381_Addressfix1.Designer.cs">
       <DependentUpon>202002261829381_Addressfix1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202002271616518_TestDebug.cs" />
+    <Compile Include="Migrations\202002271616518_TestDebug.Designer.cs">
+      <DependentUpon>202002271616518_TestDebug.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202002281606326_GboGbo1.cs" />
+    <Compile Include="Migrations\202002281606326_GboGbo1.Designer.cs">
+      <DependentUpon>202002281606326_GboGbo1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202002281609023_lowercase.cs" />
+    <Compile Include="Migrations\202002281609023_lowercase.Designer.cs">
+      <DependentUpon>202002281609023_lowercase.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Gender.cs" />
@@ -502,6 +514,7 @@
     <Content Include="Views\StudentsSubjects\Index.cshtml" />
     <Content Include="Views\Teachers\Create.cshtml" />
     <Content Include="Views\Student\Delete.cshtml" />
+    <Content Include="Views\Student\StudentEditForm.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -654,6 +667,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202002261829381_Addressfix1.resx">
       <DependentUpon>202002261829381_Addressfix1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202002271616518_TestDebug.resx">
+      <DependentUpon>202002271616518_TestDebug.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202002281606326_GboGbo1.resx">
+      <DependentUpon>202002281606326_GboGbo1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202002281609023_lowercase.resx">
+      <DependentUpon>202002281609023_lowercase.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -10,7 +10,7 @@ namespace SchoolPortal.Models
     {
         public int Id { get; set; }
 
-        [Required(ErrorMessage ="Please Enter Student's First Name")]
+        [Required(ErrorMessage = "Please Enter Student's First Name")]
         [StringLength(12, ErrorMessage ="Maximum Length Of Characters Allowed Is 12")]
         [Display(Name = "First Name")]
         public string FirstName { get; set; }

@@ -21,28 +21,29 @@
 	<tbody>
 		@foreach (var students in Model)
 		{
-		<tr>
-			<td>@students.FirstName @students.MiddleName  @students.Lastname</td>
-			<td>@students.Year.YearName</td>
-			<td>@students.Gender.Name</td>
-			
+			<tr>
+				<td>@students.FirstName @students.MiddleName  @students.Lastname</td>
+				<td>@students.Year.YearName</td>
+				<td>@students.Gender.Name</td>
 
 
 
-			<td>
-				<div class="btn-group">
-					<a href="#" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-						Select Action
-						<span class="caret"></span>
-					</a>
-					<ul class="dropdown-menu">
-						<li>@Html.ActionLink("View Details", "Details", "Student", new { id = students.Id }, null)</li>
-						<li>@Html.ActionLink("Edit Student", "Edit", "Student", new { id = students.Id }, null)</li>
-						<li>@Html.ActionLink("Delete Student", "Delete", "Student", new { id = students.Id }, null)</li>
-					</ul>
-				</div>
-			</td>
-		</tr>
+
+				<td>
+					<div class="btn-group">
+						<a href="#" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+							Select Action
+							<span class="caret"></span>
+						</a>
+						<ul class="dropdown-menu">
+							<li>@Html.ActionLink("View Details", "Details", "Student", new { id = students.Id }, null)</li>
+							<li>@Html.ActionLink("Edit Student", "Edit", "Student", new { id = students.Id }, null)</li>
+							<li>@Html.ActionLink("Delete Student", "Delete", "Student", new { id = students.Id }, null)</li>
+						</ul>
+					</div>
+				</td>
+			</tr>
 		}
 	</tbody>
 </table>
+
