@@ -7,13 +7,13 @@ namespace SchoolPortal.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.2.0-61023")]
-    public sealed partial class lowercase : IMigrationMetadata
+    public sealed partial class ghost : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(lowercase));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(ghost));
         
         string IMigrationMetadata.Id
         {
-            get { return "202002281609023_lowercase"; }
+            get { return "202003041955289_ghost"; }
         }
         
         string IMigrationMetadata.Source

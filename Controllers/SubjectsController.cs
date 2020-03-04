@@ -18,8 +18,9 @@ namespace SchoolPortal.Controllers
         //// GET: Subjects
         public ActionResult Index()
         {
-            var subjects = db.Subjects.Include(y => y.Years);
-            return View(subjects.ToList());
+            var subjects = db.Subjects.
+            Include(y => y.Years).ToList();
+            return View(subjects);
 
         }
 

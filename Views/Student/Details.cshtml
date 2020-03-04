@@ -46,8 +46,13 @@
 <br/>
 <br />
 
+
 <div>
-	@Html.ActionLink("Back to List", "Index")
+	<input type="button" value="Back to List" onclick="location.href='@Url.Action("Index", "Student")'" class="btn btn-primary btn-sm" />
 </div>
+
+@*<div>
+	@Html.ActionLink("Back to List", "Index")
+</div>*@
 
 	

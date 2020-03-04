@@ -3,7 +3,7 @@ namespace SchoolPortal.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class lowercase : DbMigration
+    public partial class ghost : DbMigration
     {
         public override void Up()
         {

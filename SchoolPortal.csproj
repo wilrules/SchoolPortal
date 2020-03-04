@@ -366,9 +366,29 @@
     <Compile Include="Migrations\202002281606326_GboGbo1.Designer.cs">
       <DependentUpon>202002281606326_GboGbo1.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202002281609023_lowercase.cs" />
-    <Compile Include="Migrations\202002281609023_lowercase.Designer.cs">
-      <DependentUpon>202002281609023_lowercase.cs</DependentUpon>
+    <Compile Include="Migrations\202003041842221_Added1tomanyTeacherandStudents.cs" />
+    <Compile Include="Migrations\202003041842221_Added1tomanyTeacherandStudents.Designer.cs">
+      <DependentUpon>202003041842221_Added1tomanyTeacherandStudents.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202003041857475_UpdatingRelationships.cs" />
+    <Compile Include="Migrations\202003041857475_UpdatingRelationships.Designer.cs">
+      <DependentUpon>202003041857475_UpdatingRelationships.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202003041900515_TestUpdate.cs" />
+    <Compile Include="Migrations\202003041900515_TestUpdate.Designer.cs">
+      <DependentUpon>202003041900515_TestUpdate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202003041952227_p1.cs" />
+    <Compile Include="Migrations\202003041952227_p1.Designer.cs">
+      <DependentUpon>202003041952227_p1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202003041955289_ghost.cs" />
+    <Compile Include="Migrations\202003041955289_ghost.Designer.cs">
+      <DependentUpon>202003041955289_ghost.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202003042023124_sid.cs" />
+    <Compile Include="Migrations\202003042023124_sid.Designer.cs">
+      <DependentUpon>202003042023124_sid.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -674,8 +694,23 @@
     <EmbeddedResource Include="Migrations\202002281606326_GboGbo1.resx">
       <DependentUpon>202002281606326_GboGbo1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202002281609023_lowercase.resx">
-      <DependentUpon>202002281609023_lowercase.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202003041842221_Added1tomanyTeacherandStudents.resx">
+      <DependentUpon>202003041842221_Added1tomanyTeacherandStudents.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202003041857475_UpdatingRelationships.resx">
+      <DependentUpon>202003041857475_UpdatingRelationships.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202003041900515_TestUpdate.resx">
+      <DependentUpon>202003041900515_TestUpdate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202003041952227_p1.resx">
+      <DependentUpon>202003041952227_p1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202003041955289_ghost.resx">
+      <DependentUpon>202003041955289_ghost.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202003042023124_sid.resx">
+      <DependentUpon>202003042023124_sid.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

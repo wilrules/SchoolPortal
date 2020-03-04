@@ -129,11 +129,11 @@ namespace SchoolPortal.Controllers
                 studentInDb.FirstName = student.FirstName;
                 studentInDb.MiddleName = student.MiddleName;
                 studentInDb.Lastname = student.Lastname;
-                studentInDb.Religion = student.Religion;
-                studentInDb.Tribe = student.Tribe;
+                studentInDb.ReligionId = student.ReligionId;
+                studentInDb.TribeId = student.TribeId;
                 studentInDb.EnrolmentDate = student.EnrolmentDate;
-                studentInDb.Gender = student.Gender;
-                studentInDb.Year = student.Year;
+                studentInDb.GenderId = student.GenderId;
+                studentInDb.YearId = student.YearId;
                 studentInDb.DateOfBirth = student.DateOfBirth;
                 studentInDb.HouseNumberOrName = student.HouseNumberOrName;
                 studentInDb.FirstLineofAdd = student.FirstLineofAdd;

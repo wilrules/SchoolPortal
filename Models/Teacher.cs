@@ -29,6 +29,8 @@ namespace SchoolPortal.Models
         [DataType(DataType.EmailAddress)]
         public string EmailAddress { get; set; }
 
+        public virtual ICollection<Student> Students { get; set; }
+
 
         //relationship Navigation Properties for viewmodels
         [Display(Name = "Class")]
@@ -40,6 +42,10 @@ namespace SchoolPortal.Models
         [Required(ErrorMessage ="Please Select Teacher's Title")]
         public int TitleId { get; set; }
         public virtual Title Title { get; set; }
+
+
+        
+
 
     }
 }
