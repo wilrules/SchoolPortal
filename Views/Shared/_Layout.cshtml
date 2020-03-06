@@ -27,6 +27,8 @@
                     <span class="icon-bar"></span>
                 </button>
                 <a class="navbar-brand" href="@Url.Action("Index","Home")">School Portal</a>
+             
+               
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
@@ -106,6 +108,8 @@
 
 
 
+
+
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Library<span class="caret"></span></a>
                         <ul class="dropdown-menu">
@@ -116,6 +120,21 @@
 
                         </ul>
                     </li>
+
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Settings <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="@Url.Action("New", "Home")"><span class="sidebar-icon"><i class="fa fa-bullseye"></i></span> <span class="menu-title">Add School Picture</span></a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a href="@Url.Action("Index", "Teachers")"><span class="sidebar-icon"><i class="fa fa-bullseye"></i></span> <span class="menu-title"></span></a></li>
+
+
+                            <li role="separator" class="divider"></li>
+                            <li><a href="#"></a></li>
+                        </ul>
+                    </li>
+
+
                 </ul>
 
 

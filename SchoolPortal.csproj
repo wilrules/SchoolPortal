@@ -399,11 +399,32 @@
     <Compile Include="Migrations\202003060728524_fileissues.Designer.cs">
       <DependentUpon>202003060728524_fileissues.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202003061010307_HomeDP.cs" />
+    <Compile Include="Migrations\202003061010307_HomeDP.Designer.cs">
+      <DependentUpon>202003061010307_HomeDP.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202003061246389_HomeschoolPic.cs" />
+    <Compile Include="Migrations\202003061246389_HomeschoolPic.Designer.cs">
+      <DependentUpon>202003061246389_HomeschoolPic.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202003061316284_Images.cs" />
+    <Compile Include="Migrations\202003061316284_Images.Designer.cs">
+      <DependentUpon>202003061316284_Images.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202003061322195_testdd.cs" />
+    <Compile Include="Migrations\202003061322195_testdd.Designer.cs">
+      <DependentUpon>202003061322195_testdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202003061505094_fileid.cs" />
+    <Compile Include="Migrations\202003061505094_fileid.Designer.cs">
+      <DependentUpon>202003061505094_fileid.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\File.cs" />
     <Compile Include="Models\FileType.cs" />
     <Compile Include="Models\Gender.cs" />
+    <Compile Include="Models\Home.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Religion.cs" />
@@ -546,6 +567,8 @@
     <Content Include="Views\Teachers\Create.cshtml" />
     <Content Include="Views\Student\Delete.cshtml" />
     <Content Include="Views\Student\StudentEditForm.cshtml" />
+    <Content Include="Views\Home\New.cshtml" />
+    <Content Include="Views\Home\Welcome.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -729,6 +752,21 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202003060728524_fileissues.resx">
       <DependentUpon>202003060728524_fileissues.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202003061010307_HomeDP.resx">
+      <DependentUpon>202003061010307_HomeDP.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202003061246389_HomeschoolPic.resx">
+      <DependentUpon>202003061246389_HomeschoolPic.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202003061316284_Images.resx">
+      <DependentUpon>202003061316284_Images.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202003061322195_testdd.resx">
+      <DependentUpon>202003061322195_testdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202003061505094_fileid.resx">
+      <DependentUpon>202003061505094_fileid.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

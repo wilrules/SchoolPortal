@@ -14,9 +14,9 @@ namespace SchoolPortal
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
             //routes.MapRoute(
-            //    name: "Details",
+            //    name: "Welcome",
             //    url: "{controller}/{action}/{id}",
-            //    defaults: new { controller = "Student", action = "Details", id = UrlParameter.Optional }
+            //    defaults: new { controller = "Home", action = "Welcome", id = UrlParameter.Optional }
             //    );
 
 

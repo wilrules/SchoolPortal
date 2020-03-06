@@ -6,9 +6,14 @@
 
 <h2></h2>
 
+
+
 <p>
-    @Html.ActionLink("Create New", "Create")
+
+
+
 </p>
+
 <table class="table table-bordered table-hover">
     <tr>
         <th>
@@ -60,6 +65,10 @@
 
 </table>
 
+
+
 <div>
-    @Html.ActionLink("Back to List", "Index")
+    <input type="button" value="Create New" onclick="location.href='@Url.Action("Create", "Subjects")'" class="btn btn-primary btn-sm" />
 </div>
+
+
