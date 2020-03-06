@@ -8,7 +8,7 @@
 <h2>Register New Student</h2>
 <hr />
 
-@using (Html.BeginForm("Create", "Student"))
+@using (Html.BeginForm("Create", "Student", null, FormMethod.Post, new {enctype = "multipart/form-data"}))
 {
 	<div class="row">
 
@@ -32,19 +32,32 @@
 				@Html.ValidationMessageFor(m => m.Student.Lastname)
 			</div>
 
-			<div>
-				@Html.LabelFor(m => m.Student.ReligionId)
-				@Html.DropDownListFor(m => m.Student.ReligionId, new SelectList(Model.Religions, "ReligionId", "ReligionName"), "", new { @class = "form-control" })
-				@Html.ValidationMessageFor(m => m.Student.ReligionId)
-			</div>
-			<br />
 
-			<div>
-				@Html.LabelFor(m => m.Student.TribeId)
-				@Html.DropDownListFor(m => m.Student.TribeId, new SelectList(Model.Tribes, "TribeId", "TribeName"), "", new { @class = "form-control" })
-				@Html.ValidationMessageFor(m => m.Student.TribeId)
+			<div class="input-group">
+				@Html.LabelFor(m => m.Student.Files, new { @class = "control-label col-md-2" })
+				<div class="col-md-10">
+					<input type="file" id="Avatar" name="upload" />
+				</div>
 			</div>
+
+
+
+		
+
+
+				<div class="form-group">
+			@Html.LabelFor(m => m.Student.ReligionId)
+			@Html.DropDownListFor(m => m.Student.ReligionId, new SelectList(Model.Religions, "ReligionId", "ReligionName"), "", new { @class = "form-control" })
+			@Html.ValidationMessageFor(m => m.Student.ReligionId)
 		</div>
+				<br />
+
+				<div>
+					@Html.LabelFor(m => m.Student.TribeId)
+					@Html.DropDownListFor(m => m.Student.TribeId, new SelectList(Model.Tribes, "TribeId", "TribeName"), "", new { @class = "form-control" })
+					@Html.ValidationMessageFor(m => m.Student.TribeId)
+				</div>
+			</div>
 
 		<div class="col-md-4">
 

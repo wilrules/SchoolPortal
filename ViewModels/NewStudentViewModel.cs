@@ -13,6 +13,8 @@ namespace SchoolPortal.ViewModels
 
         public Student Student { get; set; }
 
+        public File File { get; set; }
+
         public IEnumerable<Year> Years { get; set; }
 
         public IEnumerable<Religion> Religions { get; set; }

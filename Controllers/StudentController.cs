@@ -1,8 +1,10 @@
 ﻿using SchoolPortal.Models;
 using SchoolPortal.ViewModels;
+using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
 using System.Net;
+using System.Web;
 using System.Web.Mvc;
 
 namespace SchoolPortal.Controllers
@@ -36,12 +38,13 @@ namespace SchoolPortal.Controllers
         public ActionResult Details(int id)
         {
             var student = _context.Students.
+
             Include(y => y.Year).
-            //Include(s => s.StudentAddress).
             Include(g => g.Gender).
             Include(r => r.Religion).
             Include(t => t.Tribe).
             Include(s => s.StudentsSubjects).
+            Include(f => f.Files).
             SingleOrDefault(c => c.Id == id);
 
             if (student == null)
@@ -71,7 +74,7 @@ namespace SchoolPortal.Controllers
         }
 
         [HttpPost]
-        public ActionResult Create(Student student)
+        public ActionResult Create(Student student, HttpPostedFileBase upload)
         {
             if (!ModelState.IsValid)
             {
@@ -85,10 +88,22 @@ namespace SchoolPortal.Controllers
                 };
                 return View("StudentForm", viewModel);     
             }
-            if (student.Id == 0)
-                _context.Students.Add(student);
-                _context.SaveChanges();
-
+            if (student.Id == 0 && upload != null && upload.ContentLength > 0)
+            {
+                var avatar = new File
+                {
+                    FileName = System.IO.Path.GetFileName(upload.FileName),
+                    FileType = FileType.Avatar,
+                    ContentType = upload.ContentType
+                };
+                using (var reader = new System.IO.BinaryReader(upload.InputStream))
+                {
+                    avatar.Content = reader.ReadBytes(upload.ContentLength);
+                }
+                student.Files = new List<File> { avatar };
+            }
+            _context.Students.Add(student);
+            _context.SaveChanges();
             return RedirectToAction("Index", "Student");
 
         }
@@ -96,13 +111,9 @@ namespace SchoolPortal.Controllers
 
 
 
-       
-          
-        
-
         public ActionResult Edit(int id)
         {
-            var student = _context.Students.SingleOrDefault(s => s.Id == id);
+            var student = _context.Students.Include(f => f.Files).SingleOrDefault(s => s.Id == id);
 
             if (student == null)
 
@@ -114,18 +125,19 @@ namespace SchoolPortal.Controllers
                 Genders = _context.Genders.ToList(),
                 Years = _context.Years.ToList(),
                 Religions = _context.Religions.ToList(),
-                Tribes = _context.Tribes.ToList()
+                Tribes = _context.Tribes.ToList(),
+              
             };
             return View("StudentEditForm", viewmodel);
         }
 
 
         [HttpPost]
-        public ActionResult Edit (Student student)
+        public ActionResult Edit(Student student, HttpPostedFileBase upload)
         {
             if (ModelState.IsValid)
             {
-                var studentInDb = _context.Students.Single(c => c.Id == student.Id);
+                var studentInDb = _context.Students.Include(f => f.Files).Single(c => c.Id == student.Id);
                 studentInDb.FirstName = student.FirstName;
                 studentInDb.MiddleName = student.MiddleName;
                 studentInDb.Lastname = student.Lastname;
@@ -139,12 +151,36 @@ namespace SchoolPortal.Controllers
                 studentInDb.FirstLineofAdd = student.FirstLineofAdd;
                 studentInDb.SecondLineofAdd = student.SecondLineofAdd;
                 studentInDb.Area = student.Area;
+                studentInDb.FileId = student.FileId;
+
+
+
+
+                if (upload != null && upload.ContentLength > 0)
+                {
+                    if (studentInDb.Files.Any(f => f.FileType == FileType.Avatar))
+                    {
+                        _context.Files.Remove(studentInDb.Files.First(f => f.FileType == FileType.Avatar));
+                    }
+                    var avatar = new File
+                    {
+                        FileName = System.IO.Path.GetFileName(upload.FileName),
+                        FileType = FileType.Avatar,
+                        ContentType = upload.ContentType
+                    };
+                    using (var reader = new System.IO.BinaryReader(upload.InputStream))
+                    {
+                        avatar.Content = reader.ReadBytes(upload.ContentLength);
+                    }
+                    studentInDb.Files = new List<File> { avatar };
+                }
+
+                _context.Entry(studentInDb).State = EntityState.Modified;
+                _context.SaveChanges();
+               
             }
-            _context.SaveChanges();
             return RedirectToAction("Index", "Student");
         }
-       
-
 
 
         // GET: Teachers/Delete/5

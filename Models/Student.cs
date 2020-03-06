@@ -63,6 +63,11 @@ namespace SchoolPortal.Models
         public ICollection<StudentsSubjects> StudentsSubjects { get; set; }
 
 
+        //Newly added
+        public int FileId { get; set; }
+        public virtual ICollection<File> Files { get; set; }
+
+
         [Display(Name = "Religion")]
         public int ReligionId { get; set; }
         public virtual Religion Religion { get; set; }

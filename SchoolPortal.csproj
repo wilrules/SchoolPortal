@@ -168,6 +168,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\FileController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\StudentController.cs" />
@@ -390,8 +391,18 @@
     <Compile Include="Migrations\202003042023124_sid.Designer.cs">
       <DependentUpon>202003042023124_sid.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202003051855458_Files.cs" />
+    <Compile Include="Migrations\202003051855458_Files.Designer.cs">
+      <DependentUpon>202003051855458_Files.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202003060728524_fileissues.cs" />
+    <Compile Include="Migrations\202003060728524_fileissues.Designer.cs">
+      <DependentUpon>202003060728524_fileissues.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\File.cs" />
+    <Compile Include="Models\FileType.cs" />
     <Compile Include="Models\Gender.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
@@ -551,6 +562,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\File\" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202002231733535_Initial.resx">
@@ -711,6 +723,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202003042023124_sid.resx">
       <DependentUpon>202003042023124_sid.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202003051855458_Files.resx">
+      <DependentUpon>202003051855458_Files.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202003060728524_fileissues.resx">
+      <DependentUpon>202003060728524_fileissues.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
