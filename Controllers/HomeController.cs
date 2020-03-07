@@ -53,39 +53,11 @@ namespace SchoolPortal.Controllers
             return View();
         }
 
-        public ActionResult New()
-        {
-
-            return View();
-        }
+     
 
 
 
 
-
-        [HttpPost]
-        public ActionResult Create(Home home, HttpPostedFileBase upload)
-        {
-            if (home.HomeId == 0 && upload != null && upload.ContentLength > 0)
-            {
-                var schoolPicture = new File
-                {
-                    FileName = System.IO.Path.GetFileName(upload.FileName),
-                    FileType = FileType.SchoolPicture,
-                    ContentType = upload.ContentType
-                };
-                using (var reader = new System.IO.BinaryReader(upload.InputStream))
-                {
-                    schoolPicture.Content = reader.ReadBytes(upload.ContentLength);
-                }
-                home.Files = new List<File> { schoolPicture };
-
-            }
-            _context.Homes.Add(home);
-            _context.SaveChanges();
-            return RedirectToAction("Welcome" , "Home");
-
-        }
        
     }
 }

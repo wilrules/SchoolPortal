@@ -23,7 +23,6 @@ namespace SchoolPortal.Models
 
        
 
-        public virtual Home Home { get; set; }
     
     }
 }

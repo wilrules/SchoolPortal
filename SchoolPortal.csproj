@@ -419,12 +419,15 @@
     <Compile Include="Migrations\202003061505094_fileid.Designer.cs">
       <DependentUpon>202003061505094_fileid.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202003070603177_appdb.cs" />
+    <Compile Include="Migrations\202003070603177_appdb.Designer.cs">
+      <DependentUpon>202003070603177_appdb.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\File.cs" />
     <Compile Include="Models\FileType.cs" />
     <Compile Include="Models\Gender.cs" />
-    <Compile Include="Models\Home.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Religion.cs" />
@@ -567,8 +570,6 @@
     <Content Include="Views\Teachers\Create.cshtml" />
     <Content Include="Views\Student\Delete.cshtml" />
     <Content Include="Views\Student\StudentEditForm.cshtml" />
-    <Content Include="Views\Home\New.cshtml" />
-    <Content Include="Views\Home\Welcome.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -767,6 +768,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202003061505094_fileid.resx">
       <DependentUpon>202003061505094_fileid.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202003070603177_appdb.resx">
+      <DependentUpon>202003070603177_appdb.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
