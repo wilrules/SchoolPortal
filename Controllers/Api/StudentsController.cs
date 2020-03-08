@@ -8,6 +8,8 @@ using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 using System.Web.Http.Description;
+using AutoMapper;
+using SchoolPortal.Dtos;
 using SchoolPortal.Models;
 
 namespace SchoolPortal.Controllers.Api
@@ -23,15 +25,15 @@ namespace SchoolPortal.Controllers.Api
         }
 
         // GET: api/Students
-        public IEnumerable<Student> GetStudents()
+        public IEnumerable<StudentDto> GetStudents()
         {
-            return _context.Students.ToList();
+            return _context.Students.ToList().Select(Mapper.Map<Student, StudentDto>);
         }
 
 
         // GET: api/Students/5
         //[ResponseType(typeof(Student))]
-        public Student GetStudent(int id)
+        public StudentDto GetStudent(int id)
         {
             var student = _context.Students.SingleOrDefault(s => s.Id == id);
          
@@ -40,13 +42,13 @@ namespace SchoolPortal.Controllers.Api
                 throw new HttpResponseException(HttpStatusCode.NotFound);
             }
 
-            return student;
+            return Mapper.Map<Student, StudentDto>(student);
         }
 
         // PUT: api/Students/5
         [HttpPut]
         //[ResponseType(typeof(void))]
-        public void UpdateStudent(int id, Student student)
+        public void UpdateStudent(int id, StudentDto studentDto)
         {
             if (!ModelState.IsValid)
             {
@@ -59,20 +61,9 @@ namespace SchoolPortal.Controllers.Api
             if (studentInDb == null)
                 throw new HttpResponseException(HttpStatusCode.NotFound);
 
-            studentInDb.FirstName = student.FirstName;
-            studentInDb.MiddleName = student.MiddleName;
-            studentInDb.Lastname = student.Lastname;
-            studentInDb.ReligionId = student.ReligionId;
-            studentInDb.TribeId = student.TribeId;
-            studentInDb.EnrolmentDate = student.EnrolmentDate;
-            studentInDb.GenderId = student.GenderId;
-            studentInDb.YearId = student.YearId;
-            studentInDb.DateOfBirth = student.DateOfBirth;
-            studentInDb.HouseNumberOrName = student.HouseNumberOrName;
-            studentInDb.FirstLineofAdd = student.FirstLineofAdd;
-            studentInDb.SecondLineofAdd = student.SecondLineofAdd;
-            studentInDb.Area = student.Area;
-            studentInDb.FileId = student.FileId;
+            Mapper.Map(studentDto, studentInDb);
+
+           
 
             _context.SaveChanges();
 
@@ -84,17 +75,22 @@ namespace SchoolPortal.Controllers.Api
         // POST: api/Students
         [HttpPost]
         //[ResponseType(typeof(Student))]
-        public Student CreateStudent(Student student)
+        public StudentDto CreateStudent(StudentDto studentDto)
         {
             if (!ModelState.IsValid)
             {
                 throw new HttpResponseException(HttpStatusCode.BadRequest);
             }
 
+            var student = Mapper.Map<StudentDto, Student>(studentDto);
+
             _context.Students.Add(student);
             _context.SaveChanges();
 
-            return student;
+
+            studentDto.Id = student.Id;
+
+            return studentDto;
         }
 
         [HttpDelete]
