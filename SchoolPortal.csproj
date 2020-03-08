@@ -439,6 +439,22 @@
     <Compile Include="Migrations\202003070603177_appdb.Designer.cs">
       <DependentUpon>202003070603177_appdb.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202003081246255_relationshipfixer.cs" />
+    <Compile Include="Migrations\202003081246255_relationshipfixer.Designer.cs">
+      <DependentUpon>202003081246255_relationshipfixer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202003081249253_stilfixing.cs" />
+    <Compile Include="Migrations\202003081249253_stilfixing.Designer.cs">
+      <DependentUpon>202003081249253_stilfixing.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202003081250293_lastry.cs" />
+    <Compile Include="Migrations\202003081250293_lastry.Designer.cs">
+      <DependentUpon>202003081250293_lastry.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202003081251281_relsfixed123.cs" />
+    <Compile Include="Migrations\202003081251281_relsfixed123.Designer.cs">
+      <DependentUpon>202003081251281_relsfixed123.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\File.cs" />
@@ -787,6 +803,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202003070603177_appdb.resx">
       <DependentUpon>202003070603177_appdb.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202003081246255_relationshipfixer.resx">
+      <DependentUpon>202003081246255_relationshipfixer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202003081249253_stilfixing.resx">
+      <DependentUpon>202003081249253_stilfixing.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202003081250293_lastry.resx">
+      <DependentUpon>202003081250293_lastry.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202003081251281_relsfixed123.resx">
+      <DependentUpon>202003081251281_relsfixed123.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

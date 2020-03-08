@@ -63,7 +63,7 @@ namespace SchoolPortal.Models
         public ICollection<StudentsSubjects> StudentsSubjects { get; set; }
 
 
-        //Newly added
+        ////Newly added
         public int FileId { get; set; }
         public virtual ICollection<File> Files { get; set; }
 

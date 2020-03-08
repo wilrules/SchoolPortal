@@ -17,12 +17,12 @@ namespace SchoolPortal.Models
 
         public FileType FileType { get; set; }
 
-      
+
 
         public virtual Student Student { get; set; }
 
-       
 
-    
+
+
     }
 }

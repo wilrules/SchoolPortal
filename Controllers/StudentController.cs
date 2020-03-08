@@ -119,17 +119,17 @@ namespace SchoolPortal.Controllers
 
                 return HttpNotFound();
 
-            var viewmodel = new StudentFormViewModel
-            {
-                Student = student,
-                Genders = _context.Genders.ToList(),
-                Years = _context.Years.ToList(),
-                Religions = _context.Religions.ToList(),
-                Tribes = _context.Tribes.ToList(),
-              
-            };
+        var viewmodel = new StudentFormViewModel
+        {
+            Student = student,
+            Genders = _context.Genders.ToList(),
+            Years = _context.Years.ToList(),
+            Religions = _context.Religions.ToList(),
+            Tribes = _context.Tribes.ToList(),
+
+        };
             return View("StudentEditForm", viewmodel);
-        }
+    }
 
 
         [HttpPost]
@@ -177,7 +177,7 @@ namespace SchoolPortal.Controllers
 
                 _context.Entry(studentInDb).State = EntityState.Modified;
                 _context.SaveChanges();
-               
+
             }
             return RedirectToAction("Index", "Student");
         }

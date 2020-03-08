@@ -33,39 +33,34 @@ namespace SchoolPortal.Controllers.Api
 
         // GET: api/Students/5
         //[ResponseType(typeof(Student))]
-        public StudentDto GetStudent(int id)
+        public IHttpActionResult GetStudent(int id)
         {
             var student = _context.Students.SingleOrDefault(s => s.Id == id);
-         
-            if (student == null)
-            {
-                throw new HttpResponseException(HttpStatusCode.NotFound);
-            }
 
-            return Mapper.Map<Student, StudentDto>(student);
+            if (student == null)
+            return NotFound();
+
+            return Ok (Mapper.Map<Student, StudentDto>(student));
         }
 
         // PUT: api/Students/5
         [HttpPut]
         //[ResponseType(typeof(void))]
-        public void UpdateStudent(int id, StudentDto studentDto)
+        public IHttpActionResult UpdateStudent(int id, StudentDto studentDto)
         {
             if (!ModelState.IsValid)
-            {
-                throw new HttpResponseException(HttpStatusCode.BadRequest);
-
-            }
+                return BadRequest();
 
             var studentInDb = _context.Students.SingleOrDefault(s => s.Id == id);
 
             if (studentInDb == null)
-                throw new HttpResponseException(HttpStatusCode.NotFound);
+                return NotFound();
 
             Mapper.Map(studentDto, studentInDb);
 
-           
-
             _context.SaveChanges();
+
+            return Ok();
 
         }
 
@@ -75,13 +70,12 @@ namespace SchoolPortal.Controllers.Api
         // POST: api/Students
         [HttpPost]
         //[ResponseType(typeof(Student))]
-        public StudentDto CreateStudent(StudentDto studentDto)
+        public IHttpActionResult CreateStudent(StudentDto studentDto)
         {
             if (!ModelState.IsValid)
-            {
-                throw new HttpResponseException(HttpStatusCode.BadRequest);
-            }
-
+                return BadRequest();
+            
+             
             var student = Mapper.Map<StudentDto, Student>(studentDto);
 
             _context.Students.Add(student);
@@ -90,23 +84,26 @@ namespace SchoolPortal.Controllers.Api
 
             studentDto.Id = student.Id;
 
-            return studentDto;
+            return Created(new Uri(Request.RequestUri + "/" + student.Id), studentDto);
         }
+
 
         [HttpDelete]
         // DELETE: api/Students/5
         [ResponseType(typeof(Student))]
-        public void DeleteStudent(int id)
+        public IHttpActionResult DeleteStudent(int id)
         {
             var studentInDb = _context.Students.SingleOrDefault(s => s.Id == id);
 
             if (studentInDb == null)
-                throw new HttpResponseException(HttpStatusCode.NotFound);
+                return NotFound();
 
             _context.Students.Remove(studentInDb);
             _context.SaveChanges();
-     
+
+            return Ok();
         }
+
 
         protected override void Dispose(bool disposing)
         {
@@ -117,9 +114,6 @@ namespace SchoolPortal.Controllers.Api
             base.Dispose(disposing);
         }
 
-        private bool StudentExists(int id)
-        {
-            return _context.Students.Count(e => e.Id == id) > 0;
-        }
+     
     }
 }
