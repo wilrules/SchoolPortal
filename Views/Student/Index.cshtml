@@ -20,29 +20,7 @@
 	</thead>
 
 	<tbody>
-		@foreach (var students in Model)
-		{
-			<tr>
-				<td>@students.FirstName @students.MiddleName  @students.Lastname</td>
-				<td>@students.Year.YearName</td>
-				<td>@students.Gender.Name</td>
-
-				<td>
-					<div class="btn-group">
-						<a href="#" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-							Select Action
-							<span class="caret"></span>
-						</a>
-						<ul class="dropdown-menu">
-							<li>@Html.ActionLink("View Details", "Details", "Student", new { id = students.Id }, null)</li>
-							<li>@Html.ActionLink("Edit Student", "Edit", "Student", new { id = students.Id }, null)</li>
-							<li>@Html.ActionLink("Delete Student", "Delete", "Student", new { id = students.Id }, null)</li>
-							<li data-student-id="@students.Id" class="active btn-link js-delete">Remove</li>
-						</ul>
-					</div>
-				</td>
-			</tr>
-		}
+		
 	</tbody>
 </table>
 
@@ -50,8 +28,42 @@
 	{
 	<script>
 		$(document).ready(function () {
-			$("#students").DataTable();
-			$("#students").on("click", "js-delete", function () {
+			var table = $("#students").DataTable({
+				ajax: {
+					url: "api/students",
+					dataSrc:""
+				},
+				columns: [
+					{
+						data: "firstName"
+						
+					},
+
+					{
+						data: "lastname"
+						
+					},
+
+					{
+						data: "id",
+						render: function (data) {
+							return "<a href='/students/edit/" + data + "'>" +"Edit"+ "</a>";
+							
+						}
+					},
+
+				
+					{
+						data: "id",
+						render: function (data) {
+							return "<button class = 'btn-link js-delete' data-student-id=" + data + ">Delete</button>";
+						}
+					}
+				]
+
+			});
+
+			$("#students").on("click", ".js-delete", function () {
 				var button = $(this);
 				bootbox.confirm("Are you sure you want to delete this student?", function (result) {
 					if (result) {
@@ -59,7 +71,7 @@
 							url: "/api/students/" + button.attr("data-student-id"),
 							method: "DELETE",
 							success: function () {
-								button.parents("tr").remove();
+								table.row(button.parents("tr")).remove().draw();
 							}
 
 						});

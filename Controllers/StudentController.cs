@@ -28,10 +28,11 @@ namespace SchoolPortal.Controllers
         //// GET: Student
         public ActionResult Index()
         {
-            var students = _context.Students.
-            Include(y => y.Year).
-            Include(g => g.Gender).ToList();
-            return View(students);
+            //var students = _context.Students.
+            //Include(y => y.Year).
+            //Include(g => g.Gender).ToList();
+            //return View(students);
+            return View();
         }
 
         // GET: Details
