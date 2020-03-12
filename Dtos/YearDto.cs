@@ -7,5 +7,6 @@ namespace SchoolPortal.Dtos
 {
     public class YearDto
     {
+
     }
 }
