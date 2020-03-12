@@ -25,9 +25,14 @@ namespace SchoolPortal.Controllers.Api
         }
 
         // GET: api/Students
-        public IEnumerable<StudentDto> GetStudents()
+        public IHttpActionResult GetStudents()
         {
-            return _context.Students.ToList().Select(Mapper.Map<Student, StudentDto>);
+            var studentDtos = _context.Students
+                .Include(g => g.Gender)
+                .Include(y => y.Year)
+                .ToList()
+                .Select(Mapper.Map<Student, StudentDto>);
+            return Ok(studentDtos);
         }
 
 

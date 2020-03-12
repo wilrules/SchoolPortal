@@ -192,6 +192,7 @@
     <Compile Include="Controllers\TeachersController.cs" />
     <Compile Include="Controllers\YearsController.cs" />
     <Compile Include="Dtos\StudentDto.cs" />
+    <Compile Include="Dtos\YearDto.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
